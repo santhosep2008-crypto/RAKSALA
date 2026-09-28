@@ -2140,3 +2140,165 @@ img {
     padding: 15px;
 
     border-left: 
+       /* =========================================
+   PERMANENT RAKSALA FOOTER
+========================================= */
+
+.site-footer {
+
+    position: relative;
+
+    min-height: 330px;
+
+    background-image:
+        url("../assets/images/footer-mountains.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+}
+
+
+.footer-overlay {
+
+    min-height: 330px;
+
+    background:
+        linear-gradient(
+            rgba(3,18,30,.88),
+            rgba(3,18,30,.94)
+        );
+
+    padding: 55px 7% 20px;
+
+}
+
+
+.footer-content {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 45px;
+
+}
+
+
+.footer-brand img {
+
+    width: 75px;
+
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.footer-brand h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 25px;
+
+}
+
+
+.footer-brand p {
+
+    color: #9ed1d6;
+
+}
+
+
+.footer-column h4 {
+
+    margin-top: 0;
+
+    color: #ffffff;
+
+}
+
+
+.footer-column a {
+
+    display: block;
+
+    color: #b9cbd1;
+
+    text-decoration: none;
+
+    margin: 11px 0;
+
+    transition: .2s;
+
+}
+
+
+.footer-column a:hover {
+
+    color: #37d6d4;
+
+}
+
+
+.footer-bottom {
+
+    max-width: 1250px;
+
+    margin: 45px auto 0;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
+    color: #91a8b0;
+
+    font-size: 12px;
+
+    text-align: center;
+
+}
+
+
+@media(max-width: 800px) {
+
+    .footer-content {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+    .footer-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
