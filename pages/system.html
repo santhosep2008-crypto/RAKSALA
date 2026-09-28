@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="RAKSALA System Architecture">
+
+    <title>RAKSALA | System</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <!-- LEFT LOGO -->
+
+        <div class="brand-left">
+
+            <a href="../index.html">
+
+                <img
+                    src="../assets/images/left-logo.jpg"
+                    alt="RAKSALA Logo"
+                    class="left-logo">
+
+            </a>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="header-search">
+
+            <input
+                type="text"
+                placeholder="Search..."
+                id="searchInput">
+
+            <button
+                type="button"
+                onclick="performSearch()">
+
+                🔍
+
+            </button>
+
+        </div>
+
+
+        <!-- RIGHT LOGO -->
+
+        <div class="brand-right">
+
+            <img
+                src="../assets/images/right-logo.jpg"
+                alt="Organization Logo"
+                class="right-logo">
+
+        </div>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="language-wrapper">
+
+            <button
+                class="language-button"
+                id="languageButton">
+
+                🌐
+
+                <span id="currentLanguage">
+                    English
+                </span>
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div
+                class="language-menu"
+                id="languageMenu">
+
+                <button onclick="changeLanguage('en')">
+                    English
+                </button>
+
+                <button onclick="changeLanguage('hi')">
+                    हिन्दी
+                </button>
+
+                <button onclick="changeLanguage('ta')">
+                    தமிழ்
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="main-nav">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About RAKSALA
+        </a>
+
+        <!-- SYSTEM -->
+
+        <a href="system.html"
+           class="active">
+
+            System
+
+        </a>
+
+        <a href="monitoring.html">
+            Monitoring
+        </a>
+
+        <a href="documents.html">
+            Documents
+        </a>
+
+        <a href="resources.html">
+            Resources
+        </a>
+
+        <a href="connect.html">
+            Connect
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     SYSTEM HERO
+===================================================== -->
+
+<section class="system-page-hero">
+
+    <div class="system-page-overlay"></div>
+
+
+    <div class="system-page-content">
+
+        <span class="section-label">
+            RAKSALA TECHNOLOGY
+        </span>
+
+        <h1>
+            System Architecture
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            An integrated architecture designed to
+            protect, power, monitor and connect
+            critical systems in high-altitude environments.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM INTRO
+===================================================== -->
+
+<section class="system-intro">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                THE RAKSALA SYSTEM
+            </span>
+
+            <h2>
+                Four Integrated Layers
+            </h2>
+
+            <p>
+                RAKSALA combines physical protection,
+                environmental awareness, resilient power
+                and controlled communication into a
+                unified field system.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM 01
+===================================================== -->
+
+<section class="system-detail">
+
+    <div class="system-detail-container">
+
+
+        <div class="system-image">
+
+            <img
+                src="../assets/images/system-skin.jpg"
+                alt="RAKSALA Adaptive Protection Skin">
+
+            <div class="system-number">
+                01
+            </div>
+
+        </div>
+
+
+        <div class="system-text">
+
+            <span class="system-label">
+                PROTECTION LAYER
+            </span>
+
+            <h2>
+                Adaptive Protection Skin
+            </h2>
+
+            <p>
+                The outer protective structure forms
+                the first line of defence for the RAKSALA
+                system in harsh high-altitude environments.
+            </p>
+
+            <p>
+                A layered TPU-based protective approach
+                is designed to reduce exposure to
+                moisture, dust, UV radiation, abrasion
+                and extreme environmental conditions.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    Multi-layer protective construction
+                </li>
+
+                <li>
+                    UV and weather resistance
+                </li>
+
+                <li>
+                    Moisture and dust protection
+                </li>
+
+                <li>
+                    Reduced environmental stress
+                    on internal electronics
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM 02
+===================================================== -->
+
+<section class="system-detail reverse">
+
+    <div class="system-detail-container">
+
+
+        <div class="system-image">
+
+            <img
+                src="../assets/images/system-sensors.jpg"
+                alt="RAKSALA Environmental Sensors">
+
+            <div class="system-number">
+                02
+            </div>
+
+        </div>
+
+
+        <div class="system-text">
+
+            <span class="system-label">
+                MONITORING LAYER
+            </span>
+
+            <h2>
+                Environmental Sensor Layer
+            </h2>
+
+            <p>
+                The sensor layer provides continuous
+                awareness of the surrounding environment
+                and operating conditions.
+            </p>
+
+            <p>
+                RAKSALA focuses on five key environmental
+                parameters that can influence system
+                operation in high-altitude locations.
+            </p>
+
+
+            <div class="parameter-list">
+
+                <span>
+                    🌡 Temperature
+                </span>
+
+                <span>
+                    💧 Humidity
+                </span>
+
+                <span>
+                    ◉ Pressure
+                </span>
+
+                <span>
+                    ☀ UV Index
+                </span>
+
+                <span>
+                    🌫 Dust
+                </span>
+
+            </div>
+
+
+            <p class="technical-note">
+
+                Sensor data can be processed locally
+                before being forwarded through the
+                authorized communication architecture.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM 03
+===================================================== -->
+
+<section class="system-detail">
+
+    <div class="system-detail-container">
+
+
+        <div class="system-image">
+
+            <img
+                src="../assets/images/system-power.jpg"
+                alt="RAKSALA Power System">
+
+            <div class="system-number">
+                03
+            </div>
+
+        </div>
+
+
+        <div class="system-text">
+
+            <span class="system-label">
+                ENERGY LAYER
+            </span>
+
+            <h2>
+                Intelligent Power System
+            </h2>
+
+            <p>
+                RAKSALA uses an integrated power architecture
+                designed to support operation in remote
+                environments where conventional power
+                infrastructure may not be available.
+            </p>
+
+            <p>
+                Solar energy can be managed through an
+                MPPT charge controller and stored in a
+                battery system with battery-management
+                protection.
+            </p>
+
+
+            <div class="power-flow">
+
+                <span>
+                    ☀ Solar
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    MPPT
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    Battery + BMS
+                </span>
+
+                <b>
+                    →
+                </b>
+
+                <span>
+                    System
+                </span>
+
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Solar energy harvesting
+                </li>
+
+                <li>
+                    MPPT-based charging
+                </li>
+
+                <li>
+                    Battery management
+                </li>
+
+                <li>
+                    Power distribution to system modules
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM 04
+===================================================== -->
+
+<section class="system-detail reverse">
+
+    <div class="system-detail-container">
+
+
+        <div class="system-image">
+
+            <img
+                src="../assets/images/system-hub.jpg"
+                alt="RAKSALA Private Communication Hub">
+
+            <div class="system-number">
+                04
+            </div>
+
+        </div>
+
+
+        <div class="system-text">
+
+            <span class="system-label">
+                COMMUNICATION LAYER
+            </span>
+
+            <h2>
+                RAKSALA Private Communication Hub
+            </h2>
+
+            <p>
+                The RAKSALA Hub is designed as the local
+                communication and processing point between
+                deployed RAKSALA nodes and the authorized
+                control infrastructure.
+            </p>
+
+            <p>
+                The proposed architecture emphasizes
+                authenticated devices, encrypted
+                communication, local processing and
+                controlled data flow.
+            </p>
+
+
+            <div class="communication-flow">
+
+                <div>
+                    RAKSALA<br>
+                    NODE
+                </div>
+
+                <span>
+                    →
+                </span>
+
+                <div>
+                    PRIVATE<br>
+                    LINK
+                </div>
+
+                <span>
+                    →
+                </span>
+
+                <div>
+                    RAKSALA<br>
+                    HUB
+                </div>
+
+                <span>
+                    →
+                </span>
+
+                <div>
+                    AUTHORIZED<br>
+                    CENTRE
+                </div>
+
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Device authentication
+                </li>
+
+                <li>
+                    Encrypted telemetry
+                </li>
+
+                <li>
+                    Local / edge processing
+                </li>
+
+                <li>
+                    Controlled data routing
+                </li>
+
+                <li>
+                    Priority emergency communication
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMPLETE FLOW
+===================================================== -->
+
+<section class="complete-system">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                COMPLETE ARCHITECTURE
+            </span>
+
+            <h2>
+                How RAKSALA Works
+            </h2>
+
+        </div>
+
+
+        <div class="complete-flow">
+
+            <div>
+                <strong>
+                    01
+                </strong>
+
+                <span>
+                    Protect
+                </span>
+            </div>
+
+            <b>→</b>
+
+            <div>
+                <strong>
+                    02
+                </strong>
+
+                <span>
+                    Sense
+                </span>
+            </div>
+
+            <b>→</b>
+
+            <div>
+                <strong>
+                    03
+                </strong>
+
+                <span>
+                    Power
+                </span>
+            </div>
+
+            <b>→</b>
+
+            <div>
+                <strong>
+                    04
+                </strong>
+
+                <span>
+                    Connect
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-background"></div>
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                RAKSALA
+            </h2>
+
+            <p>
+                Protect • Power • Connect
+            </p>
+
+            <span>
+                Built for extreme environments.
+                Designed for impact.
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About RAKSALA
+            </a>
+
+            <a href="system.html">
+                System
+            </a>
+
+            <a href="monitoring.html">
+                Monitoring
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Resources
+            </h3>
+
+            <a href="documents.html">
+                Documents
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="connect.html">
+                Connect
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Social
+            </h3>
+
+            <a href="https://github.com/"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://youtube.com/"
+               target="_blank">
+                YouTube
+            </a>
+
+            <a href="https://instagram.com/"
+               target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 RAKSALA. All Rights Reserved.
+        </span>
+
+        <span>
+            Protect • Power • Connect
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="../js/script.js"></script>
+
+</body>
+
+</html>
