@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="RAKSALA - Smart, Rugged and Adaptive Protection System for High-Altitude Environments">
+
+    <title>RAKSALA | Protect • Power • Connect</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <!-- TOP HEADER -->
+
+    <div class="header-top">
+
+        <!-- LEFT LOGO -->
+
+        <div class="brand-left">
+
+            <img src="assets/images/left-logo.png"
+                 alt="RAKSALA Logo"
+                 class="left-logo">
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="header-search">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search..."
+                aria-label="Search">
+
+            <button
+                type="button"
+                onclick="performSearch()"
+                aria-label="Search">
+
+                🔍
+
+            </button>
+
+        </div>
+
+
+        <!-- RIGHT LOGO -->
+
+        <div class="brand-right">
+
+            <img src="assets/images/right-logo.png"
+                 alt="Organization Logo"
+                 class="right-logo">
+
+        </div>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="language-wrapper">
+
+            <button
+                class="language-button"
+                id="languageButton">
+
+                🌐
+                <span id="currentLanguage">
+                    English
+                </span>
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div
+                class="language-menu"
+                id="languageMenu">
+
+                <button onclick="changeLanguage('en')">
+                    English
+                </button>
+
+                <button onclick="changeLanguage('hi')">
+                    हिन्दी
+                </button>
+
+                <button onclick="changeLanguage('ta')">
+                    தமிழ்
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="main-nav">
+
+        <a href="#home"
+           data-i18n="navHome">
+            Home
+        </a>
+
+        <a href="#system"
+           data-i18n="navSystem">
+            System
+        </a>
+
+        <a href="#monitoring"
+           data-i18n="navMonitoring">
+            Monitoring
+        </a>
+
+        <a href="#documents"
+           data-i18n="navDocuments">
+            Documents
+        </a>
+
+        <a href="#resources"
+           data-i18n="navResources">
+            Resources
+        </a>
+
+        <a href="#connect"
+           data-i18n="navConnect">
+            Connect
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+<section
+    id="home"
+    class="hero-section">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            HIGH-ALTITUDE TECHNOLOGY
+        </div>
+
+
+        <h1>
+            RAKSALA
+        </h1>
+
+
+        <div class="hero-line"></div>
+
+
+        <h2 data-i18n="heroTagline">
+            Protect • Power • Connect
+        </h2>
+
+
+        <p data-i18n="heroDescription">
+
+            A smart, rugged and adaptive protection
+            system designed for high-altitude,
+            high-stress environments.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#system"
+               class="primary-button"
+               data-i18n="exploreButton">
+
+                Explore RAKSALA
+
+            </a>
+
+
+            <a href="#monitoring"
+               class="secondary-button"
+               data-i18n="monitorButton">
+
+                View Monitoring
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO STATUS -->
+
+    <div class="hero-status">
+
+        <span class="status-dot"></span>
+
+        <span data-i18n="systemStatus">
+            RAKSALA SYSTEM • OPERATIONAL
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="intro-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                RAKSALA
+            </span>
+
+            <h2 data-i18n="introTitle">
+                Built for Extreme Environments
+            </h2>
+
+        </div>
+
+
+        <p class="intro-text"
+           data-i18n="introText">
+
+            RAKSALA is a smart, rugged and adaptive
+            protection system designed to support
+            critical equipment and communication
+            infrastructure in high-altitude areas.
+
+        </p>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3 data-i18n="featureProtection">
+                    Protection
+                </h3>
+
+                <p data-i18n="featureProtectionText">
+
+                    Adaptive multi-layer protection
+                    against harsh environmental conditions.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ☀️
+                </div>
+
+                <h3 data-i18n="featurePower">
+                    Power
+                </h3>
+
+                <p data-i18n="featurePowerText">
+
+                    Solar-powered energy architecture
+                    with battery and peak-load support.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📡
+                </div>
+
+                <h3 data-i18n="featureConnect">
+                    Connect
+                </h3>
+
+                <p data-i18n="featureConnectText">
+
+                    Controlled communication architecture
+                    with local processing and monitoring.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYSTEM
+===================================================== -->
+
+<section
+    id="system"
+    class="system-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                THE SYSTEM
+            </span>
+
+            <h2 data-i18n="systemTitle">
+                RAKSALA Architecture
+            </h2>
+
+            <p data-i18n="systemDescription">
+
+                An integrated platform combining
+                environmental protection, intelligent
+                monitoring, power management and
+                secure communication.
+
+            </p>
+
+        </div>
+
+
+        <div class="architecture">
+
+
+            <div class="architecture-node">
+
+                <div class="architecture-number">
+                    01
+                </div>
+
+                <div>
+                    <h3>
+                        Adaptive Skin
+                    </h3>
+
+                    <p>
+                        TPU + protective nano layer
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="architecture-arrow">
+                →
+            </div>
+
+
+            <div class="architecture-node">
+
+                <div class="architecture-number">
+                    02
+                </div>
+
+                <div>
+                    <h3>
+                        Sensor Layer
+                    </h3>
+
+                    <p>
+                        Environmental monitoring
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="architecture-arrow">
+                →
+            </div>
+
+
+            <div class="architecture-node">
+
+                <div class="architecture-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Electronics
+                    </h3>
+
+                    <p>
+                        Controlled electronics chamber
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="architecture-arrow">
+                →
+            </div>
+
+
+            <div class="architecture-node">
+
+                <div class="architecture-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        Communication
+                    </h3>
+
+                    <p>
+                        Private communication architecture
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MONITORING
+===================================================== -->
+
+<section
+    id="monitoring"
+    class="monitoring-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                LIVE SYSTEM DATA
+            </span>
+
+            <h2 data-i18n="monitoringTitle">
+                Environmental Monitoring
+            </h2>
+
+            <p data-i18n="monitoringDescription">
+
+                Real-time environmental parameters
+                monitored by the RAKSALA system.
+
+            </p>
+
+        </div>
+
+
+        <div class="monitoring-grid">
+
+
+            <!-- TEMPERATURE -->
+
+            <div class="monitor-card">
+
+                <div class="monitor-icon temperature">
+                    🌡
+                </div>
+
+                <div class="monitor-info">
+
+                    <span
+                        class="monitor-name"
+                        data-i18n="temperature">
+                        Temperature
+                    </span>
+
+                    <strong id="temperatureValue">
+                        -32.0°C
+                    </strong>
+
+                    <span class="monitor-status">
+                        ● NORMAL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HUMIDITY -->
+
+            <div class="monitor-card">
+
+                <div class="monitor-icon humidity">
+                    💧
+                </div>
+
+                <div class="monitor-info">
+
+                    <span
+                        class="monitor-name"
+                        data-i18n="humidity">
+                        Humidity
+                    </span>
+
+                    <strong id="humidityValue">
+                        41%
+                    </strong>
+
+                    <span class="monitor-status">
+                        ● NORMAL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRESSURE -->
+
+            <div class="monitor-card">
+
+                <div class="monitor-icon pressure">
+                    ◉
+                </div>
+
+                <div class="monitor-info">
+
+                    <span
+                        class="monitor-name"
+                        data-i18n="pressure">
+                        Pressure
+                    </span>
+
+                    <strong id="pressureValue">
+                        58 kPa
+                    </strong>
+
+                    <span class="monitor-status">
+                        ● NORMAL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- UV -->
+
+            <div class="monitor-card">
+
+                <div class="monitor-icon uv">
+                    ☀
+                </div>
+
+                <div class="monitor-info">
+
+                    <span
+                        class="monitor-name"
+                        data-i18n="uvIndex">
+                        UV Index
+                    </span>
+
+                    <strong id="uvValue">
+                        7.2
+                    </strong>
+
+                    <span class="monitor-status">
+                        ● MONITORED
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DUST -->
+
+            <div class="monitor-card">
+
+                <div class="monitor-icon dust">
+                    🌫
+                </div>
+
+                <div class="monitor-info">
+
+                    <span
+                        class="monitor-name"
+                        data-i18n="dustLevel">
+                        Dust Level
+                    </span>
+
+                    <strong id="dustValue">
+                        34 µg/m³
+                    </strong>
+
+                    <span class="monitor-status">
+                        ● NORMAL
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MONITORING FOOTER -->
+
+        <div class="monitoring-footer">
+
+            <div>
+
+                <span class="small-label">
+                    LAST UPDATE
+                </span>
+
+                <strong id="lastUpdate">
+                    Just now
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="small-label">
+                    LINK STATUS
+                </span>
+
+                <strong class="secure-status">
+                    ● SECURE
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="small-label">
+                    NODE
+                </span>
+
+                <strong>
+                    RAKSALA-01
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DOCUMENTS
+===================================================== -->
+
+<section
+    id="documents"
+    class="documents-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                DOCUMENTATION
+            </span>
+
+            <h2 data-i18n="documentsTitle">
+                RAKSALA Documents
+            </h2>
+
+            <p data-i18n="documentsDescription">
+
+                Technical documentation and project
+                presentation.
+
+            </p>
+
+        </div>
+
+
+        <div class="document-layout">
+
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    📄
+                </div>
+
+                <div class="document-content">
+
+                    <span class="document-type">
+                        PRESENTATION
+                    </span>
+
+                    <h3>
+                        RAKSALA Technical Presentation
+                    </h3>
+
+                    <p>
+                        System concept, architecture,
+                        power system, monitoring and
+                        communication framework.
+                    </p>
+
+                    <div class="document-buttons">
+
+                        <a
+                            href="documents/RAKSALA-Presentation.pdf"
+                            target="_blank"
+                            class="document-button">
+
+                            VIEW DOCUMENT
+
+                        </a>
+
+                        <a
+                            href="documents/RAKSALA-Presentation.pdf"
+                            download
+                            class="document-button outline">
+
+                            DOWNLOAD
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="document-side">
+
+                <div class="document-stat">
+
+                    <strong>
+                        01
+                    </strong>
+
+                    <span>
+                        Technical Presentation
+                    </span>
+
+                </div>
+
+
+                <div class="document-stat">
+
+                    <strong>
+                        05
+                    </strong>
+
+                    <span>
+                        Environmental Parameters
+                    </span>
+
+                </div>
+
+
+                <div class="document-stat">
+
+                    <strong>
+                        03
+                    </strong>
+
+                    <span>
+                        Core System Pillars
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESOURCES
+===================================================== -->
+
+<section
+    id="resources"
+    class="resources-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                RESOURCES
+            </span>
+
+            <h2>
+                RAKSALA Resources
+            </h2>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+
+                <span>
+                    ⚙️
+                </span>
+
+                <h3>
+                    System Architecture
+                </h3>
+
+                <p>
+                    Explore the complete RAKSALA
+                    technology architecture.
+                </p>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <span>
+                    🔐
+                </span>
+
+                <h3>
+                    Private Communication
+                </h3>
+
+                <p>
+                    Controlled local communication
+                    and edge-processing concept.
+                </p>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <span>
+                    ☀️
+                </span>
+
+                <h3>
+                    Power Architecture
+                </h3>
+
+                <p>
+                    Solar, MPPT, battery and
+                    peak-load support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOCIAL MEDIA
+===================================================== -->
+
+<section
+    id="connect"
+    class="social-section">
+
+    <div class="section-container">
+
+        <div class="section-heading light">
+
+            <span class="section-label">
+                CONNECT
+            </span>
+
+            <h2>
+                Follow RAKSALA
+            </h2>
+
+            <p>
+                Explore the project, development
+                and technology updates.
+            </p>
+
+        </div>
+
+
+        <div class="social-grid">
+
+
+            <!-- GITHUB -->
+
+            <a
+                href="https://github.com/"
+                target="_blank"
+                class="social-card">
+
+                <div class="social-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <h3>
+                        GitHub
+                    </h3>
+
+                    <p>
+                        Project Repository
+                    </p>
+
+                </div>
+
+                <span class="social-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="social-card">
+
+                <div class="social-icon">
+                    ▶
+                </div>
+
+                <div>
+
+                    <h3>
+                        YouTube
+                    </h3>
+
+                    <p>
+                        Videos & Demonstrations
+                    </p>
+
+                </div>
+
+                <span class="social-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="social-card">
+
+                <div class="social-icon">
+                    ◎
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p>
+                        Project Updates
+                    </p>
+
+                </div>
+
+                <span class="social-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-background"></div>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h2>
+                RAKSALA
+            </h2>
+
+            <p>
+                Protect • Power • Connect
+            </p>
+
+            <span>
+                Built for extreme environments.
+                Designed for impact.
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#system">
+                System
+            </a>
+
+            <a href="#monitoring">
+                Monitoring
+            </a>
+
+            <a href="#documents">
+                Documents
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Resources
+            </h3>
+
+            <a href="#resources">
+                Architecture
+            </a>
+
+            <a href="#monitoring">
+                Monitoring
+            </a>
+
+            <a href="#documents">
+                Documents
+            </a>
+
+            <a href="#connect">
+                Connect
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Connect
+            </h3>
+
+            <a href="https://github.com/"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://youtube.com/"
+               target="_blank">
+                YouTube
+            </a>
+
+            <a href="https://instagram.com/"
+               target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 RAKSALA. All Rights Reserved.
+        </span>
+
+        <span>
+            Protect • Power • Connect
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
