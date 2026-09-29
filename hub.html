@@ -3,267 +3,2021 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="RAKSALA Hub - Centralized monitoring and authorized communication interface">
+    <title>
+        RAKSALA Hub | Protect • Power • Connect
+    </title>
 
-<title>RAKSALA | Hub</title>
 
-<link rel="stylesheet"
-      href="../css/style.css">
+    <style>
 
-<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* =====================================================
-   RAKSALA HUB
-===================================================== */
 
-* {
-    box-sizing: border-box;
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f4f7f6;
+            color: #173f42;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .rak-header {
+
+            background: white;
+
+            border-bottom:
+                1px solid #dce6e5;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+
+        .header-top {
+
+            min-height: 90px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            padding:
+                12px 5%;
+        }
+
+
+        .logo-left {
+
+            width: 150px;
+            height: 65px;
+
+            object-fit: contain;
+        }
+
+
+        .logo-right {
+
+            width: 120px;
+            height: 60px;
+
+            object-fit: contain;
+
+            margin-left: auto;
+        }
+
+
+        .search-box {
+
+            display: flex;
+
+            max-width: 350px;
+
+            flex: 1;
+
+            margin-left: auto;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding:
+                11px 15px;
+
+            border:
+                1px solid #ccd9d8;
+
+            border-radius:
+                7px 0 0 7px;
+
+            outline: none;
+        }
+
+
+        .search-box button {
+
+            border: none;
+
+            background: #174b4e;
+
+            color: white;
+
+            padding: 0 17px;
+
+            border-radius:
+                0 7px 7px 0;
+
+            cursor: pointer;
+        }
+
+
+        .language {
+
+            position: relative;
+        }
+
+
+        .language button {
+
+            border:
+                1px solid #ccd9d8;
+
+            background: white;
+
+            padding:
+                10px 14px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+        }
+
+
+        .language-menu {
+
+            display: none;
+
+            position: absolute;
+
+            right: 0;
+
+            top: 45px;
+
+            background: white;
+
+            border:
+                1px solid #d5dfde;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.12);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            min-width: 130px;
+        }
+
+
+        .language-menu button {
+
+            display: block;
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 0;
+
+            text-align: left;
+
+            background: white;
+        }
+
+
+        .language-menu button:hover {
+
+            background: #edf5f4;
+        }
+
+
+        .main-nav {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 5px;
+
+            padding:
+                0 5% 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .main-nav a {
+
+            padding:
+                10px 15px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            color: #35575a;
+        }
+
+
+        .main-nav a:hover,
+        .main-nav a.active {
+
+            background: #174b4e;
+
+            color: white;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hub-hero {
+
+            min-height: 390px;
+
+            background:
+                linear-gradient(
+                    rgba(7,35,38,.62),
+                    rgba(7,35,38,.76)
+                ),
+                url("../assets/images/hero.jpg")
+                center/cover no-repeat;
+
+            display: flex;
+
+            align-items: center;
+
+            padding:
+                70px 7%;
+
+            color: white;
+        }
+
+
+        .hub-hero-content {
+
+            max-width: 850px;
+        }
+
+
+        .hero-label {
+
+            display: inline-block;
+
+            padding:
+                8px 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.4);
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hub-hero h1 {
+
+            font-size:
+                clamp(44px, 6vw, 72px);
+
+            margin-bottom: 15px;
+        }
+
+
+        .hub-hero p {
+
+            max-width: 720px;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+
+            color: #e2eeee;
+        }
+
+
+        /* ================= STATUS ================= */
+
+        .status-wrap {
+
+            max-width: 1200px;
+
+            margin:
+                -35px auto 0;
+
+            padding: 0 20px;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        .status-bar {
+
+            background: white;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.12);
+
+            padding: 20px 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .status-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 13px;
+
+            color: #5d7173;
+        }
+
+
+        .status-dot {
+
+            width: 10px;
+
+            height: 10px;
+
+            background: #2b9b6f;
+
+            border-radius: 50%;
+        }
+
+
+        .status-item strong {
+
+            color: #174b4e;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        .section {
+
+            padding: 80px 20px;
+        }
+
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 35px;
+        }
+
+
+        .section-label {
+
+            color: #548582;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 38px;
+
+            margin-top: 8px;
+
+            color: #173f42;
+        }
+
+
+        .section-heading p {
+
+            margin-top: 10px;
+
+            color: #6c7e80;
+
+            max-width: 750px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= NODES ================= */
+
+        .node-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .node-card {
+
+            background: white;
+
+            border:
+                1px solid #dfe9e8;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 6px 18px
+                rgba(20,60,60,.05);
+
+            transition: .25s;
+        }
+
+
+        .node-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(20,60,60,.1);
+        }
+
+
+        .node-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 22px;
+        }
+
+
+        .node-name {
+
+            color: #174b4e;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        .node-zone {
+
+            font-size: 11px;
+
+            color: #7a8b8c;
+        }
+
+
+        .node-status {
+
+            display: inline-block;
+
+            padding:
+                6px 10px;
+
+            border-radius: 20px;
+
+            background: #e8f5ef;
+
+            color: #348061;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .node-values {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .node-value {
+
+            background: #f3f7f6;
+
+            border-radius: 10px;
+
+            padding: 13px;
+        }
+
+
+        .node-value span {
+
+            display: block;
+
+            color: #78898a;
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .node-value strong {
+
+            color: #174b4e;
+
+            font-size: 16px;
+        }
+
+
+        .battery {
+
+            margin-top: 18px;
+        }
+
+
+        .battery-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 12px;
+
+            color: #66797a;
+
+            margin-bottom: 7px;
+        }
+
+
+        .battery-track {
+
+            height: 7px;
+
+            background: #e2e9e8;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .battery-fill {
+
+            height: 100%;
+
+            background: #4b9189;
+
+            border-radius: 20px;
+        }
+
+
+        /* ================= ARCHITECTURE ================= */
+
+        .architecture-box {
+
+            background: #092f32;
+
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 45px 25px;
+
+            overflow-x: auto;
+        }
+
+
+        .architecture {
+
+            min-width: 800px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .arch-node {
+
+            padding: 20px;
+
+            min-width: 155px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            background:
+                rgba(255,255,255,.07);
+
+            border-radius: 15px;
+        }
+
+
+        .arch-node strong {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+        }
+
+
+        .arch-node small {
+
+            opacity: .65;
+
+            font-size: 11px;
+        }
+
+
+        .arch-arrow {
+
+            font-size: 28px;
+
+            color: #62c8c3;
+        }
+
+
+        /* ================= FUNCTIONS ================= */
+
+        .function-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .function-card {
+
+            background: white;
+
+            padding: 25px;
+
+            border:
+                1px solid #dfe9e8;
+
+            border-radius: 16px;
+        }
+
+
+        .function-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .function-card h3 {
+
+            color: #174b4e;
+
+            margin-bottom: 9px;
+        }
+
+
+        .function-card p {
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            color: #718082;
+        }
+
+
+        /* ================= NOTE ================= */
+
+        .note {
+
+            max-width: 1100px;
+
+            margin: 0 auto 70px;
+
+            padding:
+                20px 25px;
+
+            background: #fff8e8;
+
+            border-left:
+                4px solid #d39b2e;
+
+            border-radius: 8px;
+
+            color: #765f29;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background:
+                linear-gradient(
+                    rgba(5,27,29,.82),
+                    rgba(5,27,29,.9)
+                ),
+                url("../assets/images/footer-mountains.jpg")
+                center/cover no-repeat;
+
+            color: white;
+
+            padding:
+                60px 6% 25px;
+        }
+
+
+        .footer-content {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        .footer-content h3 {
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-content h4 {
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-content p {
+
+            color: #c8d7d7;
+
+            line-height: 1.7;
+
+            font-size: 13px;
+        }
+
+
+        .footer-links a {
+
+            display: block;
+
+            color: #c8d7d7;
+
+            margin-bottom: 9px;
+
+            font-size: 13px;
+        }
+
+
+        .footer-links a:hover {
+
+            color: white;
+        }
+
+
+        .footer-bottom {
+
+            max-width: 1200px;
+
+            margin:
+                40px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            font-size: 12px;
+
+            color: #b9caca;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:1000px) {
+
+            .node-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .function-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-content {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media(max-width:700px) {
+
+            .header-top {
+
+                flex-wrap: wrap;
+            }
+
+
+            .logo-left {
+
+                width: 120px;
+            }
+
+
+            .logo-right {
+
+                width: 90px;
+            }
+
+
+            .search-box {
+
+                order: 3;
+
+                flex-basis: 100%;
+
+                max-width: none;
+            }
+
+
+            .hub-hero {
+
+                min-height: 330px;
+
+                padding:
+                    55px 25px;
+            }
+
+
+            .hub-hero h1 {
+
+                font-size: 44px;
+            }
+
+
+            .node-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .function-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-content {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-bottom {
+
+                flex-direction: column;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="rak-header">
+
+    <div class="header-top">
+
+        <a href="../index.html">
+
+            <img
+                src="../assets/images/left-logo.jpg"
+                class="logo-left"
+                alt="RAKSALA">
+
+        </a>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search RAKSALA...">
+
+            <button onclick="searchPage()">
+                🔍
+            </button>
+
+        </div>
+
+
+        <img
+            src="../assets/images/right-logo.jpg"
+            class="logo-right"
+            alt="Organization">
+
+
+        <div class="language">
+
+            <button onclick="toggleLanguage()">
+                🌐 English ▾
+            </button>
+
+
+            <div
+                class="language-menu"
+                id="languageMenu">
+
+                <button
+                    onclick="setLanguage('English')">
+                    English
+                </button>
+
+                <button
+                    onclick="setLanguage('हिन्दी')">
+                    हिन्दी
+                </button>
+
+                <button
+                    onclick="setLanguage('தமிழ்')">
+                    தமிழ்
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About RAKSALA
+        </a>
+
+        <a href="system.html">
+            System
+        </a>
+
+        <a href="monitoring.html">
+            Monitoring
+        </a>
+
+        <a
+            href="hub.html"
+            class="active">
+            Hub
+        </a>
+
+        <a href="documents.html">
+            Documents
+        </a>
+
+        <a href="resources.html">
+            Resources
+        </a>
+
+        <a href="connect.html">
+            Connect
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hub-hero">
+
+    <div class="hub-hero-content">
+
+        <span class="hero-label">
+            AUTHORIZED COMMUNICATION INTERFACE
+        </span>
+
+        <h1>
+            RAKSALA HUB
+        </h1>
+
+        <p>
+            Centralized monitoring and communication
+            interface for authorized RAKSALA nodes
+            operating in high-altitude environments.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATUS ================= -->
+
+<div class="status-wrap">
+
+    <div class="status-bar">
+
+        <div class="status-item">
+
+            <span class="status-dot"></span>
+
+            <strong>
+                DEMO HUB
+            </strong>
+
+        </div>
+
+
+        <div class="status-item">
+
+            Network:
+
+            <strong>
+                AUTHORIZED PRIVATE NETWORK
+            </strong>
+
+        </div>
+
+
+        <div class="status-item">
+
+            Refresh:
+
+            <strong id="hubClock">
+                --:--:--
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NODES ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                NODE MANAGEMENT
+            </span>
+
+            <h2>
+                RAKSALA Field Nodes
+            </h2>
+
+            <p>
+                Demonstration view of environmental
+                conditions and power status reported
+                by multiple RAKSALA nodes.
+            </p>
+
+        </div>
+
+
+        <div class="node-grid">
+
+
+            <!-- NODE 01 -->
+
+            <div class="node-card">
+
+                <div class="node-header">
+
+                    <div>
+
+                        <div class="node-name">
+                            RAKSALA-01
+                        </div>
+
+                        <div class="node-zone">
+                            Zone A
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="node-status">
+                    ● NORMAL
+                </span>
+
+
+                <div class="node-values">
+
+                    <div class="node-value">
+
+                        <span>
+                            Temperature
+                        </span>
+
+                        <strong>
+                            -18.4°C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Humidity
+                        </span>
+
+                        <strong>
+                            38%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Pressure
+                        </span>
+
+                        <strong>
+                            61 kPa
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            UV Index
+                        </span>
+
+                        <strong>
+                            6.8
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Dust
+                        </span>
+
+                        <strong>
+                            28 µg/m³
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="battery">
+
+                    <div class="battery-top">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            87%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="battery-track">
+
+                        <div
+                            class="battery-fill"
+                            style="width:87%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NODE 02 -->
+
+            <div class="node-card">
+
+                <div class="node-header">
+
+                    <div>
+
+                        <div class="node-name">
+                            RAKSALA-02
+                        </div>
+
+                        <div class="node-zone">
+                            Zone B
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="node-status">
+                    ● NORMAL
+                </span>
+
+
+                <div class="node-values">
+
+                    <div class="node-value">
+
+                        <span>
+                            Temperature
+                        </span>
+
+                        <strong>
+                            -24.1°C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Humidity
+                        </span>
+
+                        <strong>
+                            31%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Pressure
+                        </span>
+
+                        <strong>
+                            57 kPa
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            UV Index
+                        </span>
+
+                        <strong>
+                            7.4
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Dust
+                        </span>
+
+                        <strong>
+                            41 µg/m³
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="battery">
+
+                    <div class="battery-top">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            74%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="battery-track">
+
+                        <div
+                            class="battery-fill"
+                            style="width:74%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NODE 03 -->
+
+            <div class="node-card">
+
+                <div class="node-header">
+
+                    <div>
+
+                        <div class="node-name">
+                            RAKSALA-03
+                        </div>
+
+                        <div class="node-zone">
+                            Zone C
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="node-status">
+                    ● STANDBY
+                </span>
+
+
+                <div class="node-values">
+
+                    <div class="node-value">
+
+                        <span>
+                            Temperature
+                        </span>
+
+                        <strong>
+                            -12.7°C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Humidity
+                        </span>
+
+                        <strong>
+                            46%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Pressure
+                        </span>
+
+                        <strong>
+                            64 kPa
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            UV Index
+                        </span>
+
+                        <strong>
+                            5.9
+                        </strong>
+
+                    </div>
+
+
+                    <div class="node-value">
+
+                        <span>
+                            Dust
+                        </span>
+
+                        <strong>
+                            19 µg/m³
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="battery">
+
+                    <div class="battery-top">
+
+                        <span>
+                            Battery
+                        </span>
+
+                        <strong>
+                            62%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="battery-track">
+
+                        <div
+                            class="battery-fill"
+                            style="width:62%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ARCHITECTURE ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                COMMUNICATION ARCHITECTURE
+            </span>
+
+            <h2>
+                RAKSALA Hub Network
+            </h2>
+
+            <p>
+                Demonstration architecture showing
+                how field nodes can communicate with
+                the RAKSALA Hub and an authorized
+                monitoring centre.
+            </p>
+
+        </div>
+
+
+        <div class="architecture-box">
+
+            <div class="architecture">
+
+
+                <div class="arch-node">
+
+                    <strong>
+                        RAKSALA NODE
+                    </strong>
+
+                    <small>
+                        Sensors
+                    </small>
+
+                </div>
+
+
+                <div class="arch-arrow">
+                    →
+                </div>
+
+
+                <div class="arch-node">
+
+                    <strong>
+                        AUTHENTICATED LINK
+                    </strong>
+
+                    <small>
+                        Protected Channel
+                    </small>
+
+                </div>
+
+
+                <div class="arch-arrow">
+                    →
+                </div>
+
+
+                <div class="arch-node">
+
+                    <strong>
+                        RAKSALA HUB
+                    </strong>
+
+                    <small>
+                        Edge Processing
+                    </small>
+
+                </div>
+
+
+                <div class="arch-arrow">
+                    →
+                </div>
+
+
+                <div class="arch-node">
+
+                    <strong>
+                        AUTHORIZED CENTRE
+                    </strong>
+
+                    <small>
+                        Monitoring
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FUNCTIONS ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                HUB FUNCTIONS
+            </span>
+
+            <h2>
+                Controlled Communication & Monitoring
+            </h2>
+
+        </div>
+
+
+        <div class="function-grid">
+
+
+            <div class="function-card">
+
+                <div class="function-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Authentication
+                </h3>
+
+                <p>
+                    Authorized nodes can be validated
+                    before participating in the
+                    communication network.
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <div class="function-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Protected Communication
+                </h3>
+
+                <p>
+                    Communication can use authenticated
+                    and encrypted channels within an
+                    authorized private network.
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <div class="function-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Edge Processing
+                </h3>
+
+                <p>
+                    Environmental information can be
+                    processed locally before forwarding
+                    selected information.
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <div class="function-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Central Monitoring
+                </h3>
+
+                <p>
+                    Operators can view node condition,
+                    environmental parameters and
+                    system alerts.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTE ================= -->
+
+<div class="note">
+
+    <strong>DEMONSTRATION INTERFACE:</strong>
+
+    The RAKSALA Hub shown here is a website
+    demonstration. The displayed node values are
+    sample data. Actual authentication, encryption,
+    radio operation, spectrum use and deployment
+    require the appropriate technical implementation
+    and authorization.
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                RAKSALA
+            </h3>
+
+            <p>
+                Protect • Power • Connect
+            </p>
+
+            <p>
+                Adaptive technology for extreme
+                environments.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="system.html">
+                System
+            </a>
+
+            <a href="monitoring.html">
+                Monitoring
+            </a>
+
+            <a href="hub.html">
+                Hub
+            </a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="documents.html">
+                Documents
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="connect.html">
+                Connect
+            </a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Connect
+            </h4>
+
+            <a
+                href="https://github.com/"
+                target="_blank">
+                GitHub
+            </a>
+
+            <a
+                href="https://youtube.com/"
+                target="_blank">
+                YouTube
+            </a>
+
+            <a
+                href="https://instagram.com/"
+                target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 RAKSALA. All Rights Reserved.
+        </span>
+
+        <span>
+            Protect • Power • Connect
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function toggleLanguage() {
+
+    const menu =
+        document.getElementById(
+            "languageMenu"
+        );
+
+    menu.style.display =
+        menu.style.display === "block"
+        ? "none"
+        : "block";
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f3f7f8;
-    color: #15363d;
+
+function setLanguage(language) {
+
+    const button =
+        document.querySelector(
+            ".language button"
+        );
+
+    button.innerHTML =
+        "🌐 " + language + " ▾";
+
+    document.getElementById(
+        "languageMenu"
+    ).style.display = "none";
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+function searchPage() {
 
-.hub-header {
-    background: #ffffff;
-    border-bottom: 1px solid #dce7e9;
-    position: relative;
-    z-index: 100;
-}
+    const value =
+        document.getElementById(
+            "searchInput"
+        ).value
+        .trim()
+        .toLowerCase();
 
-.hub-header-top {
+    if (!value) return;
 
-    width: min(1250px, 92%);
+    const pageText =
+        document.body.innerText
+        .toLowerCase();
 
-    margin: auto;
+    if (pageText.includes(value)) {
 
-    min-height: 95px;
+        alert(
+            "The term \"" +
+            value +
+            "\" is available on this page."
+        );
 
-    display: flex;
+    } else {
 
-    align-items: center;
+        alert(
+            "No matching content found on this page."
+        );
 
-    justify-content: space-between;
-
-    gap: 25px;
-}
-
-.hub-left-logo {
-
-    width: 170px;
-
-    height: auto;
-
-    display: block;
-}
-
-.hub-right-logo {
-
-    width: 70px;
-
-    height: 70px;
-
-    object-fit: contain;
+    }
 }
 
 
-/* NAVIGATION */
+function updateHubClock() {
 
-.hub-nav {
+    const now = new Date();
 
-    display: flex;
+    document.getElementById(
+        "hubClock"
+    ).textContent =
+        now.toLocaleTimeString();
 
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    border-top: 1px solid #edf1f2;
-}
-
-.hub-nav a {
-
-    color: #18363d;
-
-    text-decoration: none;
-
-    padding: 17px 18px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: .2s ease;
-}
-
-.hub-nav a:hover {
-
-    color: #078d95;
-
-    background: #f1f8f8;
-}
-
-.hub-nav a.active {
-
-    color: #078d95;
-
-    border-bottom: 3px solid #078d95;
 }
 
 
-/* =====================================================
-   HERO
-===================================================== */
+updateHubClock();
 
-.hub-hero {
-
-    min-height: 430px;
-
-    display: flex;
-
-    align-items: center;
-
-    background-image:
-
-        linear-gradient(
-            90deg,
-            rgba(3,28,34,.92),
-            rgba(3,28,34,.65),
-            rgba(3,28,34,.35)
-        ),
-
-        url("../assets/images/hero.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    color: white;
-}
-
-.hub-hero-content {
-
-    width: min(1150px, 92%);
-
-    margin: auto;
-
-    padding: 80px 0;
-}
-
-.hub-label {
-
-    display: inline-block;
-
-    padding: 8px 15px;
-
-    border: 1px solid rgba(255,255,255,.4);
-
-    border-radius: 30px;
-
-    color: #69e2dc;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 20px;
-}
-
-.hub-hero h1 {
-
-    margin: 0 0 20px;
-
-    font-size: clamp(45px, 7vw, 75px);
-
-    line-height: 1;
-
-    color: white;
-}
-
-.hub-hero p {
-
-    max-width: 720px;
-
-    margin: 0;
-
-    color: #d7e7ea;
-
-    line-height: 1.8;
-
-    font-size: 17px;
-}
+setInterval(
+    updateHubClock,
+    1000
+);
 
 
-/* =====================================================
-   MAIN
-===================================================== */
+document.addEventListener(
+    "click",
+    function(event) {
 
-.hub-main {
+        const language =
+            document.querySelector(
+                ".language"
+            );
 
-    width: min(1200px, 92%);
+        if (!language.contains(
+            event.target
+        )) {
 
-    margin: auto;
+            document.getElementById(
+                "languageMenu"
+            ).style.display = "none";
 
-    padding: 65px 0 90px;
-}
+        }
+
+    }
+);
+
+</script>
 
 
-/* =====================================================
-   HUB STATUS
-===================================================== */
+</body>
 
-.hub-status {
-
-    background: white;
-
-    border: 1px solid #dce7e9;
-
-    border-radius: 18px;
-
-    padding: 22px 25px;
-
-    display: grid;
-
-    grid-template-columns:
-        1.4fr
-        1fr
-        1fr
-        1fr;
-
-    gap: 18px;
-
-    margin-bottom: 60px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-}
-
-.status-box {
-
-    padding: 12px;
-}
-
-.status-box small {
-
-    display: block;
-
-    color: #7b8b90;
-
-    font
+</html>
