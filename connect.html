@@ -1,99 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | RAKSALA</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Connect | RAKSALA</title>
 
     <style>
-        /* ================================
-           CONTACT PAGE
-        ================================= */
 
-        .contact-page {
-            background: #f5f0df;
-            min-height: 100vh;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .contact-hero {
-            min-height: 430px;
-            position: relative;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f4;
+            color: #17221b;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dfe4df;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            min-height: 90px;
             display: flex;
             align-items: center;
-            padding: 80px 8%;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 12px 5%;
+        }
+
+        .logo img {
+            height: 58px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 420px;
+            display: flex;
+            border: 1px solid #ccd4cd;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px 18px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #244c38;
             color: white;
+            padding: 0 18px;
+            cursor: pointer;
+        }
+
+        .right-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language {
+            position: relative;
+        }
+
+        .language button {
+            border: 1px solid #ccd4cd;
+            background: white;
+            padding: 9px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px 20px;
+            background: #183c2b;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #376b4d;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+
             background:
-                linear-gradient(rgba(5, 43, 39, 0.65),
-                rgba(5, 43, 39, 0.65)),
-                url("images/contact.jpg") center/cover;
+                linear-gradient(
+                    rgba(10, 35, 24, .65),
+                    rgba(10, 35, 24, .72)
+                ),
+                url("../assets/images/hero.jpg")
+                center/cover no-repeat;
+
+            color: white;
         }
 
-        .contact-hero-content {
-            max-width: 600px;
+        .hero-content {
+            max-width: 850px;
         }
 
-        .contact-hero h1 {
-            font-family: Georgia, serif;
-            font-size: 58px;
-            margin-bottom: 10px;
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
         }
 
-        .contact-hero p {
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 500px;
+        .hero .tagline {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 18px;
         }
 
-        .contact-section {
-            padding: 70px 8%;
-        }
-
-        .contact-container {
-            max-width: 1100px;
+        .hero p {
+            max-width: 700px;
             margin: auto;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 40px;
-            align-items: stretch;
+            line-height: 1.8;
+            font-size: 17px;
         }
 
-        /* LEFT */
+        /* ================= MAIN ================= */
 
-        .contact-info {
-            background: #f8f4e7;
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid #d8d0b8;
+        .section {
+            padding: 75px 20px;
         }
 
-        .contact-info h2 {
-            color: #123f38;
-            font-family: Georgia, serif;
-            font-size: 32px;
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            display: block;
+            color: #4e765c;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-bottom: 10px;
         }
 
-        .contact-info > p {
-            color: #59645e;
-            margin-bottom: 30px;
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
         }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #637066;
+        }
+
+        /* ================= CONTACT GRID ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            border: 1px solid #e0e6e1;
+            box-shadow: 0 10px 30px rgba(0,0,0,.07);
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+            color: #214b35;
+        }
+
+        .card-description {
+            color: #68736c;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* ================= CONTACT INFO ================= */
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 18px;
-            margin: 22px 0;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid #e7ebe7;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
         }
 
         .contact-icon {
-            width: 48px;
-            height: 48px;
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
             border-radius: 50%;
-            background: #dfe9d7;
-            color: #176153;
+            background: #e7efe8;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,382 +253,355 @@
 
         .contact-item strong {
             display: block;
-            color: #143f37;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
+            color: #244c38;
         }
 
-        .contact-item span {
-            color: #626b65;
+        .contact-item p {
+            color: #68736c;
+            line-height: 1.5;
         }
 
-        .social-title {
-            margin-top: 35px;
-            margin-bottom: 15px;
-            color: #143f37;
-            font-weight: bold;
-        }
+        /* ================= SECURITY ================= */
 
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #123f38;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            background: #1d6a5b;
-        }
-
-        /* RIGHT ORDER CARD */
-
-        .order-card {
-            background: #103f38;
-            border-radius: 25px;
-            padding: 40px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .order-card::after {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.15);
-            right: -60px;
-            bottom: -60px;
-        }
-
-        .order-card h2 {
-            font-family: Georgia, serif;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .order-card p {
-            color: #d6e2d9;
-            line-height: 1.6;
-            margin-bottom: 28px;
-        }
-
-        .order-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .order-btn {
-            border: none;
-            padding: 15px 20px;
-            border-radius: 30px;
-            font-size: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .call-btn {
-            background: #72b59a;
-            color: white;
-        }
-
-        .register-btn {
-            background: #f5f0df;
-            color: #174d42;
-        }
-
-        .order-btn:hover {
-            transform: translateY(-3px);
-        }
-
-
-        /* =================================
-           REGISTRATION MODAL
-        ================================= */
-
-        .order-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 25, 21, 0.70);
-            z-index: 9999;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-        }
-
-        .order-modal.active {
-            display: flex;
-        }
-
-        .modal-box {
-            width: 100%;
-            max-width: 650px;
-            background: #f8f4e7;
-            border-radius: 28px;
-            padding: 40px;
-            position: relative;
-
-            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
-
-            animation: modalOpen 0.3s ease;
-        }
-
-        @keyframes modalOpen {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.96);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-
-            border: none;
-            background: transparent;
-
-            font-size: 28px;
-            cursor: pointer;
-
-            color: #244d44;
-        }
-
-        .modal-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .modal-header h2 {
-            color: #123f38;
-            font-family: Georgia, serif;
-            font-size: 34px;
-            margin-bottom: 8px;
-        }
-
-        .modal-header p {
-            color: #68716b;
-        }
-
-        .registration-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .registration-option {
-            background: #efebdc;
-            border: 1px solid #ddd6c0;
-            border-radius: 20px;
-            padding: 28px 20px;
-            text-align: center;
-        }
-
-        .registration-icon {
-            width: 60px;
-            height: 60px;
-            margin: auto auto 15px;
-
-            border-radius: 50%;
-
-            background: #d9e7d9;
-            color: #176153;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 25px;
-        }
-
-        .registration-option h3 {
-            color: #17483f;
-            margin-bottom: 8px;
-        }
-
-        .registration-option p {
-            font-size: 13px;
-            color: #69726c;
-            min-height: 38px;
-        }
-
-        .modal-btn {
-            display: inline-block;
-            margin-top: 15px;
-
-            padding: 12px 22px;
-
-            border-radius: 25px;
-            border: none;
-
-            cursor: pointer;
-            text-decoration: none;
-
+        .security {
+            margin-top: 25px;
+            padding: 18px;
+            border-left: 4px solid #426b50;
+            background: #f0f5f1;
+            border-radius: 8px;
+            line-height: 1.7;
+            color: #4e5d53;
             font-size: 14px;
         }
 
-        .modal-call {
-            background: #1c6959;
-            color: white;
+        .security strong {
+            color: #244c38;
         }
 
-        .modal-register {
-            background: white;
-            color: #1c6959;
-            border: 1px solid #9eae9f;
+        /* ================= FORM ================= */
+
+        .form-group {
+            margin-bottom: 17px;
         }
 
-        .modal-footer {
-            text-align: center;
-            margin-top: 25px;
-
-            color: #6c746d;
-            font-size: 12px;
-        }
-
-
-        /* REGISTRATION FORM */
-
-        .registration-form {
-            display: none;
-        }
-
-        .registration-form.active {
+        .form-group label {
             display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        .registration-form input,
-        .registration-form textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 14px;
-
-            margin-bottom: 14px;
-
-            border: 1px solid #d3ccb8;
-            border-radius: 12px;
-
+            padding: 13px 14px;
+            border: 1px solid #ccd5ce;
+            border-radius: 9px;
             background: white;
-
             font-family: inherit;
+            font-size: 14px;
+            outline: none;
         }
 
-        .registration-form textarea {
-            min-height: 100px;
+        .form-group textarea {
+            min-height: 140px;
             resize: vertical;
         }
 
-        .submit-btn {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #426b50;
+            box-shadow: 0 0 0 3px rgba(66,107,80,.10);
+        }
+
+        .submit-button {
             width: 100%;
-            padding: 14px;
-
             border: none;
-            border-radius: 25px;
-
-            background: #176153;
+            border-radius: 9px;
+            padding: 15px;
+            background: #244c38;
             color: white;
-
+            font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
         }
 
+        .submit-button:hover {
+            background: #356449;
+        }
 
-        /* MOBILE */
+        /* ================= SOCIAL ================= */
 
-        @media(max-width: 800px) {
+        .social-section {
+            background: #eaf0eb;
+        }
 
-            .contact-container {
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .social-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #17221b;
+            border: 1px solid #dce4de;
+            transition: .25s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,.09);
+        }
+
+        .social-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .social-card h3 {
+            color: #244c38;
+            margin-bottom: 7px;
+        }
+
+        .social-card p {
+            color: #68736c;
+            font-size: 14px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(7,25,16,.78),
+                    rgba(7,25,16,.86)
+                ),
+                url("../assets/images/footer-mountains.jpg")
+                center/cover no-repeat;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 20px 35px;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 45px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #d3ddd5;
+            line-height: 1.7;
+        }
+
+        footer a {
+            display: block;
+            color: #d3ddd5;
+            text-decoration: none;
+            margin: 9px 0;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.2);
+            text-align: center;
+            padding: 18px 20px;
+            font-size: 13px;
+            color: #d3ddd5;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .header-top {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .search-box {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-hero h1 {
-                font-size: 42px;
-            }
-
-            .registration-options {
+            .social-grid {
                 grid-template-columns: 1fr;
             }
 
-            .modal-box {
-                padding: 28px 20px;
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 2px;
+            }
+
+            nav a {
+                padding: 9px 11px;
+                font-size: 13px;
             }
         }
+
+        @media (max-width: 500px) {
+
+            .logo img {
+                max-width: 150px;
+                height: auto;
+            }
+
+            .right-area .logo {
+                display: none;
+            }
+
+            .hero {
+                min-height: 380px;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
     </style>
+
 </head>
 
 
-<body class="contact-page">
+<body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= HEADER ================= -->
 
-<nav class="navbar">
+<header>
 
-    <div class="logo">
-        RAKSALA
-    </div>
+    <div class="header-top">
 
-    <div class="nav-links">
+        <a href="../index.html" class="logo">
 
-        <a href="index.html">Home</a>
+            <img
+                src="../assets/images/left-logo.jpg"
+                alt="RAKSALA Logo">
 
-        <a href="how-it-works.html">
-            Need & Impact
         </a>
 
-        <a href="dashboard.html">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search RAKSALA...">
+
+            <button
+                onclick="searchSite()">
+                🔍
+            </button>
+
+        </div>
+
+
+        <div class="right-area">
+
+            <a href="../index.html" class="logo">
+
+                <img
+                    src="../assets/images/right-logo.jpg"
+                    alt="Organization Logo">
+
+            </a>
+
+            <div class="language">
+
+                <button>
+                    🌐 EN
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="system.html">
+            System
+        </a>
+
+        <a href="monitoring.html">
             Monitoring
         </a>
 
-        <a href="team.html">
-            Team & Achievements
+        <a href="documents.html">
+            Documents
         </a>
 
-        <a href="contact.html" class="active">
-            Contact
+        <a href="resources.html">
+            Resources
         </a>
 
-    </div>
+        <a href="connect.html"
+           class="active">
+            Connect
+        </a>
 
-</nav>
+    </nav>
+
+</header>
 
 
 <!-- ================= HERO ================= -->
 
-<section class="contact-hero">
+<section class="hero">
 
-    <div class="contact-hero-content">
+    <div class="hero-content">
 
-        <h1>Get in Touch</h1>
+        <h1>RAKSALA</h1>
+
+        <div class="tagline">
+            Protect • Power • Connect
+        </div>
 
         <p>
-            Have questions? We'd love to hear from you.
-            Connect with the KALASARA team and learn more
-            about our smart water purification system.
+            Connect with RAKSALA for technical collaboration,
+            research, institutional engagement and deployment
+            related enquiries for high-altitude environments.
         </p>
 
     </div>
@@ -487,127 +611,285 @@
 
 <!-- ================= CONTACT ================= -->
 
-<section class="contact-section">
+<section class="section">
 
-    <div class="contact-container">
+    <div class="container">
 
+        <div class="section-title">
 
-        <!-- CONTACT INFORMATION -->
+            <span>
+                CONNECT WITH RAKSALA
+            </span>
 
-        <div class="contact-info">
-
-            <h2>Get in Touch</h2>
+            <h2>
+                Collaboration & Enquiries
+            </h2>
 
             <p>
-                Have questions? We'd love to hear from you.
+                RAKSALA focuses on adaptive protection,
+                intelligent power management, environmental
+                monitoring and authorized private communication
+                for High-Altitude Areas and Super High-Altitude Areas.
             </p>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ✉
-                </div>
-
-                <div>
-
-                    <strong>Email</strong>
-
-                    <span>
-                        kalasara0704@gmail.com
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ☎
-                </div>
-
-                <div>
-
-                    <strong>Phone</strong>
-
-                    <span>
-                        +91 8637466236
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <div>
-
-                    <strong>Location</strong>
-
-                    <span>
-                        Ladakh, India
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="social-title">
-                Follow Us
-            </div>
-
-            <div class="social-links">
-
-                <a href="#">◎</a>
-                <a href="#">▶</a>
-                <a href="#">in</a>
-                <a href="#">𝕏</a>
-
-            </div>
 
         </div>
 
 
-
-        <!-- ORDER CARD -->
-
-        <div class="order-card">
-
-            <h2>
-                Order Your Kalasara
-            </h2>
-
-            <p>
-                Choose how you'd like to register
-                and get clean water for your community
-                or home.
-            </p>
+        <div class="contact-grid">
 
 
-            <div class="order-buttons">
+            <!-- INFORMATION -->
 
-                <a
-                    href="tel:+918637466236"
-                    class="order-btn call-btn"
-                >
-                    ☎ &nbsp; Call and Order
-                </a>
+            <div class="card">
+
+                <h3>
+                    RAKSALA Information
+                </h3>
+
+                <p class="card-description">
+                    For technical, research and institutional
+                    enquiries, connect with the RAKSALA team.
+                </p>
 
 
-                <button
-                    class="order-btn register-btn"
-                    onclick="openOrderModal()"
-                >
-                    ▣ &nbsp; Manual Registration
-                </button>
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <p>
+                            Add your official RAKSALA email
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Phone
+                        </strong>
+
+                        <p>
+                            Add your official contact number
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Focus Area
+                        </strong>
+
+                        <p>
+                            HAA / SHAA
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Engagement
+                        </strong>
+
+                        <p>
+                            Technical • Research • Institutional
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security">
+
+                    <strong>
+                        Secure Communication
+                    </strong>
+
+                    <br>
+
+                    RAKSALA is designed around controlled,
+                    authenticated and encrypted communication
+                    within an authorized private network.
+                    Security, spectrum use and deployment remain
+                    subject to applicable authorization and requirements.
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="card">
+
+                <h3>
+                    Send an Enquiry
+                </h3>
+
+                <p class="card-description">
+                    Use the form below to submit a technical,
+                    research or institutional enquiry.
+                </p>
+
+
+                <form id="connectForm">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="organization">
+                            Organization / Institution
+                        </label>
+
+                        <input
+                            type="text"
+                            id="organization"
+                            placeholder="Enter organization">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="type">
+                            Enquiry Type
+                        </label>
+
+                        <select id="type" required>
+
+                            <option value="">
+                                Select enquiry type
+                            </option>
+
+                            <option>
+                                Technical Collaboration
+                            </option>
+
+                            <option>
+                                Research Collaboration
+                            </option>
+
+                            <option>
+                                Institutional Enquiry
+                            </option>
+
+                            <option>
+                                Deployment
+                            </option>
+
+                            <option>
+                                General
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Enter your message"
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        Submit Enquiry
+
+                    </button>
+
+                </form>
 
             </div>
 
@@ -618,256 +900,250 @@
 </section>
 
 
+<!-- ================= SOCIAL ================= -->
 
-<!-- =================================================
-     REGISTRATION MODAL
-================================================= -->
+<section class="section social-section">
 
-<div
-    class="order-modal"
-    id="orderModal"
-    onclick="closeOutside(event)"
->
+    <div class="container">
 
-    <div
-        class="modal-box"
-        onclick="event.stopPropagation()"
-    >
+        <div class="section-title">
 
-
-        <!-- CLOSE -->
-
-        <button
-            class="modal-close"
-            onclick="closeOrderModal()"
-        >
-            ×
-        </button>
-
-
-        <!-- HEADER -->
-
-        <div class="modal-header">
+            <span>
+                RAKSALA ONLINE
+            </span>
 
             <h2>
-                Order Your Kalasara
+                Follow & Explore
             </h2>
 
             <p>
-                Choose how you'd like to register
+                Explore the technical development,
+                demonstrations and project updates.
             </p>
 
         </div>
 
 
-        <!-- OPTIONS -->
-
-        <div
-            class="registration-options"
-            id="registrationOptions"
-        >
+        <div class="social-grid">
 
 
-            <!-- CALL -->
+            <a href="#"
+               class="social-card">
 
-            <div class="registration-option">
-
-                <div class="registration-icon">
-                    ☎
+                <div class="social-icon">
+                    💻
                 </div>
 
                 <h3>
-                    Call and Order
+                    GitHub
                 </h3>
 
                 <p>
-                    Speak to our team and place
-                    your order directly.
+                    Source code and technical development
                 </p>
 
-                <a
-                    href="tel:+918637466236"
-                    class="modal-btn modal-call"
-                >
-                    Call Now
-                </a>
-
-            </div>
+            </a>
 
 
-            <!-- MANUAL -->
+            <a href="#"
+               class="social-card">
 
-            <div class="registration-option">
-
-                <div class="registration-icon">
-                    ▤
+                <div class="social-icon">
+                    ▶
                 </div>
 
                 <h3>
-                    Manual Registration
+                    YouTube
                 </h3>
 
                 <p>
-                    Fill in your details and
-                    we'll get back to you.
+                    Demonstrations and project videos
                 </p>
 
-                <button
-                    class="modal-btn modal-register"
-                    onclick="showRegistrationForm()"
-                >
-                    Register Now →
-                </button>
-
-            </div>
-
-        </div>
+            </a>
 
 
+            <a href="#"
+               class="social-card">
 
-        <!-- ================= FORM ================= -->
+                <div class="social-icon">
+                    ◎
+                </div>
 
-        <div
-            class="registration-form"
-            id="registrationForm"
-        >
+                <h3>
+                    Instagram
+                </h3>
 
-            <input
-                type="text"
-                id="userName"
-                placeholder="Your Name"
-                required
-            >
+                <p>
+                    Project updates and visual content
+                </p>
 
-            <input
-                type="tel"
-                id="userPhone"
-                placeholder="Phone Number"
-                required
-            >
-
-            <input
-                type="email"
-                id="userEmail"
-                placeholder="Email Address"
-            >
-
-            <input
-                type="text"
-                id="userLocation"
-                placeholder="Village / City / Location"
-            >
-
-            <textarea
-                id="userMessage"
-                placeholder="Tell us about your requirement..."
-            ></textarea>
-
-
-            <button
-                class="submit-btn"
-                onclick="submitRegistration()"
-            >
-                Submit Registration
-            </button>
-
-        </div>
-
-
-        <div class="modal-footer">
-
-            Clean Water • Healthier Communities •
-            Brighter Future
+            </a>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 
+<!-- ================= FOOTER ================= -->
 
-<!-- ================= JAVASCRIPT ================= -->
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h3>
+                RAKSALA
+            </h3>
+
+            <p>
+                Protect • Power • Connect
+            </p>
+
+            <p>
+                Adaptive protection, intelligent power
+                management and secure connectivity
+                for high-altitude environments.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="system.html">
+                System
+            </a>
+
+            <a href="monitoring.html">
+                Monitoring
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Resources
+            </h3>
+
+            <a href="documents.html">
+                Documents
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="connect.html">
+                Connect
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 RAKSALA. All rights reserved.
+
+    </div>
+
+</footer>
+
 
 <script>
 
-function openOrderModal() {
+    /* ================= SEARCH ================= */
 
-    document
-        .getElementById("orderModal")
-        .classList.add("active");
+    function searchSite() {
 
-}
+        const value =
+            document.getElementById("searchInput")
+            .value
+            .trim()
+            .toLowerCase();
 
+        if (!value) {
 
-function closeOrderModal() {
+            alert("Please enter something to search.");
 
-    document
-        .getElementById("orderModal")
-        .classList.remove("active");
+            return;
+        }
 
-}
+        if (value.includes("system")) {
 
+            window.location.href = "system.html";
 
-function closeOutside(event) {
+        } else if (value.includes("monitor")) {
 
-    if (
-        event.target.id === "orderModal"
-    ) {
+            window.location.href = "monitoring.html";
 
-        closeOrderModal();
+        } else if (value.includes("document")) {
 
-    }
+            window.location.href = "documents.html";
 
-}
+        } else if (value.includes("resource")) {
 
+            window.location.href = "resources.html";
 
-function showRegistrationForm() {
+        } else if (value.includes("about")) {
 
-    document
-        .getElementById("registrationOptions")
-        .style.display = "none";
+            window.location.href = "about.html";
 
-    document
-        .getElementById("registrationForm")
-        .classList.add("active");
+        } else if (value.includes("connect")) {
 
-}
+            window.location.href = "connect.html";
 
+        } else {
 
-function submitRegistration() {
+            alert(
+                "No matching RAKSALA page found."
+            );
 
-    const name =
-        document.getElementById("userName").value;
-
-    const phone =
-        document.getElementById("userPhone").value;
-
-    if (!name || !phone) {
-
-        alert(
-            "Please enter your name and phone number."
-        );
-
-        return;
+        }
 
     }
 
 
-    alert(
-        "Thank you, " +
-        name +
-        "! Your Kalasara registration has been received."
-    );
+    /* ================= FORM ================= */
 
+    document
+        .getElementById("connectForm")
+        .addEventListener("submit", function(event) {
 
-    closeOrderModal();
+            event.preventDefault();
 
-}
+            alert(
+                "Thank you for contacting RAKSALA. " +
+                "Your enquiry has been recorded for demonstration purposes."
+            );
 
+            this.reset();
+
+        });
 
 </script>
 
 
 </body>
+
 </html>
