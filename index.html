@@ -2,46 +2,126 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<meta name="description"
+content="RAKSALA - Smart, Rugged and Adaptive Protection System for High-Altitude Environments">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>RAKSALA | Protect • Power • Connect</title>
 
-    <meta name="description"
-          content="RAKSALA - Smart, Rugged and Adaptive Protection System for High-Altitude Environments">
+<link rel="stylesheet" href="css/style.css">
 
-    <title>RAKSALA | Protect • Power • Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<style>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+/* =====================================================
+   RAKSALA HERO
+===================================================== */
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+.raksala-hero {
+    position: relative !important;
+    min-height: 560px !important;
+    display: flex !important;
+    align-items: center !important;
 
+    background-image: url("assets/images/hero.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    overflow: hidden !important;
+}
+
+.raksala-hero .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,28,31,.78) 0%,
+            rgba(4,28,31,.48) 48%,
+            rgba(4,28,31,.18) 100%
+        ) !important;
+}
+
+.raksala-hero .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+
+    width: min(1200px, 90%) !important;
+    margin: 0 auto !important;
+
+    padding: 90px 0 !important;
+}
+
+.raksala-hero h1 {
+    font-size: clamp(52px, 7vw, 86px) !important;
+    line-height: 1 !important;
+    margin: 0 0 12px !important;
+}
+
+.raksala-hero h2 {
+    font-size: clamp(25px, 3vw, 38px) !important;
+    line-height: 1.15 !important;
+    margin: 0 0 20px !important;
+}
+
+.raksala-hero p {
+    max-width: 680px !important;
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+}
+
+.raksala-hero .hero-buttons {
+    display: flex !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+}
+
+@media (max-width:700px) {
+
+    .raksala-hero {
+        min-height: 560px !important;
+        background-position: center center !important;
+    }
+
+    .raksala-hero .hero-content {
+        padding: 70px 0 !important;
+    }
+
+    .raksala-hero h1 {
+        font-size: 50px !important;
+    }
+
+    .raksala-hero h2 {
+        font-size: 27px !important;
+    }
+
+    .raksala-hero p {
+        font-size: 15px !important;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header class="site-header">
 
     <div class="header-top">
-
-
-        <!-- LEFT LOGO -->
 
         <div class="brand-left">
 
@@ -56,9 +136,6 @@
 
         </div>
 
-
-
-        <!-- SEARCH -->
 
         <div class="header-search">
 
@@ -80,9 +157,6 @@
         </div>
 
 
-
-        <!-- RIGHT LOGO -->
-
         <div class="brand-right">
 
             <img
@@ -92,9 +166,6 @@
 
         </div>
 
-
-
-        <!-- LANGUAGE -->
 
         <div class="language-wrapper">
 
@@ -138,10 +209,7 @@
     </div>
 
 
-
-    <!-- =================================================
-         NAVIGATION
-    ================================================= -->
+    <!-- NAVIGATION -->
 
     <nav class="main-nav">
 
@@ -160,19 +228,20 @@
         <a href="pages/monitoring.html">
             Monitoring
         </a>
+
         <a href="pages/hub.html">
             Hub
         </a>
 
-        <a href="#documents">
+        <a href="pages/documents.html">
             Documents
         </a>
 
-        <a href="#resources">
+        <a href="pages/resources.html">
             Resources
         </a>
 
-        <a href="#connect">
+        <a href="pages/connect.html">
             Connect
         </a>
 
@@ -182,17 +251,19 @@
 
 
 
+<main>
+
+
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<main>
 <section
     id="home"
-    class="raksala-hero"
-    style="background-image: url('assets/images/hero.jpg');">
+    class="raksala-hero">
 
     <div class="hero-overlay"></div>
+
 
     <div class="hero-content">
 
@@ -200,21 +271,28 @@
             HIGH-ALTITUDE TECHNOLOGY
         </div>
 
+
         <h1>
             RAKSALA
         </h1>
 
+
         <div class="hero-line"></div>
+
 
         <h2 data-i18n="heroTagline">
             Protect • Power • Connect
         </h2>
 
+
         <p data-i18n="heroDescription">
+
             A smart, rugged and adaptive protection
             system designed for high-altitude,
             high-stress environments.
+
         </p>
+
 
         <div class="hero-buttons">
 
@@ -226,6 +304,7 @@
                 Explore RAKSALA
 
             </a>
+
 
             <a
                 href="pages/monitoring.html"
@@ -243,15 +322,14 @@
 </section>
 
 
+
 <!-- =====================================================
      INTRODUCTION
 ===================================================== -->
 
 <section class="intro-section">
 
-
     <div class="section-container">
-
 
         <div class="section-heading">
 
@@ -278,11 +356,8 @@
         </p>
 
 
-
         <div class="feature-grid">
 
-
-            <!-- PROTECTION -->
 
             <div class="feature-card">
 
@@ -295,17 +370,12 @@
                 </h3>
 
                 <p data-i18n="featureProtectionText">
-
                     Adaptive multi-layer protection
                     against harsh environmental conditions.
-
                 </p>
 
             </div>
 
-
-
-            <!-- POWER -->
 
             <div class="feature-card">
 
@@ -318,17 +388,12 @@
                 </h3>
 
                 <p data-i18n="featurePowerText">
-
                     Solar-powered energy architecture
                     with battery and peak-load support.
-
                 </p>
 
             </div>
 
-
-
-            <!-- CONNECT -->
 
             <div class="feature-card">
 
@@ -341,14 +406,11 @@
                 </h3>
 
                 <p data-i18n="featureConnectText">
-
                     Controlled communication architecture
                     with local processing and monitoring.
-
                 </p>
 
             </div>
-
 
         </div>
 
@@ -366,9 +428,7 @@
     id="system"
     class="system-section">
 
-
     <div class="section-container">
-
 
         <div class="section-heading centered">
 
@@ -390,7 +450,6 @@
             </p>
 
         </div>
-
 
 
         <div class="architecture">
@@ -494,7 +553,6 @@
 
             </div>
 
-
         </div>
 
     </div>
@@ -511,14 +569,12 @@
     id="monitoring"
     class="monitoring-section">
 
-
     <div class="section-container">
-
 
         <div class="section-heading">
 
             <span class="section-label">
-                LIVE SYSTEM DATA
+                DEMONSTRATION MONITORING
             </span>
 
             <h2 data-i18n="monitoringTitle">
@@ -527,19 +583,16 @@
 
             <p data-i18n="monitoringDescription">
 
-                Real-time environmental parameters
-                monitored by the RAKSALA system.
+                Demonstration environmental parameters
+                representing the RAKSALA monitoring interface.
 
             </p>
 
         </div>
 
 
-
         <div class="monitoring-grid">
 
-
-            <!-- TEMPERATURE -->
 
             <div class="monitor-card">
 
@@ -570,9 +623,6 @@
             </div>
 
 
-
-            <!-- HUMIDITY -->
-
             <div class="monitor-card">
 
                 <div class="monitor-icon humidity">
@@ -601,9 +651,6 @@
 
             </div>
 
-
-
-            <!-- PRESSURE -->
 
             <div class="monitor-card">
 
@@ -634,9 +681,6 @@
             </div>
 
 
-
-            <!-- UV -->
-
             <div class="monitor-card">
 
                 <div class="monitor-icon uv">
@@ -666,9 +710,6 @@
             </div>
 
 
-
-            <!-- DUST -->
-
             <div class="monitor-card">
 
                 <div class="monitor-icon dust">
@@ -697,24 +738,19 @@
 
             </div>
 
-
         </div>
 
 
-
-        <!-- MONITORING FOOTER -->
-
         <div class="monitoring-footer">
-
 
             <div>
 
                 <span class="small-label">
-                    LAST UPDATE
+                    DATA MODE
                 </span>
 
                 <strong id="lastUpdate">
-                    Just now
+                    DEMO DATA
                 </strong>
 
             </div>
@@ -727,7 +763,7 @@
                 </span>
 
                 <strong class="secure-status">
-                    ● SECURE
+                    ● DEMONSTRATION
                 </strong>
 
             </div>
@@ -745,7 +781,6 @@
 
             </div>
 
-
         </div>
 
     </div>
@@ -762,9 +797,7 @@
     id="documents"
     class="documents-section">
 
-
     <div class="section-container">
-
 
         <div class="section-heading">
 
@@ -786,12 +819,10 @@
         </div>
 
 
-
         <div class="document-layout">
 
 
             <div class="document-card">
-
 
                 <div class="document-icon">
                     📄
@@ -799,7 +830,6 @@
 
 
                 <div class="document-content">
-
 
                     <span class="document-type">
                         PRESENTATION
@@ -822,7 +852,6 @@
 
                     <div class="document-buttons">
 
-
                         <a
                             href="documents/RAKSALA-Presentation.pdf"
                             target="_blank"
@@ -842,7 +871,6 @@
 
                         </a>
 
-
                     </div>
 
                 </div>
@@ -850,9 +878,7 @@
             </div>
 
 
-
             <div class="document-side">
-
 
                 <div class="document-stat">
 
@@ -892,7 +918,6 @@
 
                 </div>
 
-
             </div>
 
         </div>
@@ -904,16 +929,14 @@
 
 
 <!-- =====================================================
-     SOCIAL MEDIA
+     CONNECT
 ===================================================== -->
 
 <section
     id="connect"
     class="social-section">
 
-
     <div class="section-container">
-
 
         <div class="section-heading light">
 
@@ -926,20 +949,15 @@
             </h2>
 
             <p>
-
                 Explore the project, development
                 and technology updates.
-
             </p>
 
         </div>
 
 
-
         <div class="social-grid">
 
-
-            <!-- GITHUB -->
 
             <a
                 href="https://github.com/"
@@ -969,9 +987,6 @@
             </a>
 
 
-
-            <!-- YOUTUBE -->
-
             <a
                 href="https://www.youtube.com/"
                 target="_blank"
@@ -1000,9 +1015,6 @@
             </a>
 
 
-
-            <!-- INSTAGRAM -->
-
             <a
                 href="https://www.instagram.com/"
                 target="_blank"
@@ -1029,7 +1041,6 @@
                 </span>
 
             </a>
-
 
         </div>
 
@@ -1065,14 +1076,11 @@
             </p>
 
             <span>
-
                 Built for extreme environments.
                 Designed for impact.
-
             </span>
 
         </div>
-
 
 
         <div class="footer-column">
@@ -1081,28 +1089,31 @@
                 Explore
             </h3>
 
-
             <a href="#home">
                 Home
             </a>
 
+            <a href="pages/about.html">
+                About RAKSALA
+            </a>
 
             <a href="pages/system.html">
                 System
             </a>
 
-
             <a href="pages/monitoring.html">
                 Monitoring
             </a>
 
+            <a href="pages/hub.html">
+                Hub
+            </a>
 
             <a href="#documents">
                 Documents
             </a>
 
         </div>
-
 
 
         <div class="footer-column">
@@ -1111,21 +1122,21 @@
                 Resources
             </h3>
 
-
-            <a href="#resources">
+            <a href="pages/system.html">
                 Architecture
             </a>
-
 
             <a href="pages/monitoring.html">
                 Monitoring
             </a>
 
+            <a href="pages/hub.html">
+                Hub
+            </a>
 
             <a href="#documents">
                 Documents
             </a>
-
 
             <a href="#connect">
                 Connect
@@ -1134,13 +1145,11 @@
         </div>
 
 
-
         <div class="footer-column">
 
             <h3>
                 Connect
             </h3>
-
 
             <a
                 href="https://github.com/"
@@ -1170,9 +1179,7 @@
 
         </div>
 
-
     </div>
-
 
 
     <div class="footer-bottom">
@@ -1191,9 +1198,7 @@
 
 
 
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
+<!-- BACK TO TOP -->
 
 <button
     id="backToTop"
@@ -1206,9 +1211,7 @@
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- JAVASCRIPT -->
 
 <script src="js/script.js"></script>
 
