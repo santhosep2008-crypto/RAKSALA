@@ -3,350 +3,87 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="RAKSALA Hub - Authorized Monitoring and Communication Interface">
+<meta name="description"
+      content="RAKSALA Hub - Centralized monitoring and authorized communication interface">
 
-    <title>RAKSALA Hub | Protect • Power • Connect</title>
+<title>RAKSALA | Hub</title>
 
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
+<link rel="stylesheet"
+      href="../css/style.css">
 
 <style>
 
 /* =====================================================
-   HUB PAGE
+   RAKSALA HUB
 ===================================================== */
 
-.hub-page {
-    background: #f4f7f7;
-    color: #173f42;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7f8;
+    color: #15363d;
 }
 
 
-/* HUB HERO */
+/* =====================================================
+   HEADER
+===================================================== */
 
-.hub-hero {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(8,45,48,.98),
-            rgba(18,75,78,.95)
-        );
-
-    color: white;
-
-    padding: 75px 20px;
-
-    text-align: center;
+.hub-header {
+    background: #ffffff;
+    border-bottom: 1px solid #dce7e9;
+    position: relative;
+    z-index: 100;
 }
 
-.hub-hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
-    margin: 10px 0;
-    font-weight: 800;
-}
+.hub-header-top {
 
-.hub-hero p {
-    max-width: 750px;
-    margin: 15px auto 0;
-    line-height: 1.7;
-    opacity: .85;
-}
+    width: min(1250px, 92%);
 
-.hub-badge {
-    display: inline-block;
-
-    padding: 8px 18px;
-
-    border: 1px solid rgba(255,255,255,.3);
-
-    border-radius: 30px;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-}
-
-
-/* CONTAINER */
-
-.hub-container {
-    width: min(1180px, 92%);
     margin: auto;
-}
 
-
-/* STATUS BAR */
-
-.hub-status-bar {
-
-    margin-top: -28px;
-
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 20px 25px;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    min-height: 95px;
 
     display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
-    align-items: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.hub-online {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-}
+.hub-left-logo {
 
-.hub-dot {
+    width: 170px;
 
-    width: 12px;
-    height: 12px;
-
-    background: #25b86a;
-
-    border-radius: 50%;
-
-    box-shadow: 0 0 12px rgba(37,184,106,.6);
-}
-
-.hub-time {
-    color: #718082;
-    font-size: 14px;
-}
-
-
-/* SECTION */
-
-.hub-section {
-
-    padding: 65px 0;
-}
-
-.hub-section-title {
-
-    margin-bottom: 30px;
-}
-
-.hub-section-title span {
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    font-weight: 800;
-
-    color: #157278;
-}
-
-.hub-section-title h2 {
-
-    font-size: 34px;
-
-    margin: 8px 0;
-
-    color: #123f42;
-}
-
-
-/* NODE GRID */
-
-.node-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 22px;
-}
-
-
-/* NODE CARD */
-
-.node-card {
-
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.06);
-
-    border: 1px solid #e2eaea;
-
-    transition: .25s;
-}
-
-.node-card:hover {
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.1);
-}
-
-
-.node-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 22px;
-}
-
-
-.node-name {
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    color: #123f42;
-}
-
-
-.node-status {
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    padding: 6px 10px;
-
-    border-radius: 20px;
-
-    background: #e8f8ef;
-
-    color: #16804b;
-}
-
-
-.node-location {
-
-    color: #718082;
-
-    font-size: 13px;
-
-    margin-bottom: 22px;
-}
-
-
-/* PARAMETERS */
-
-.parameter-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-
-.parameter {
-
-    background: #f5f8f8;
-
-    border-radius: 12px;
-
-    padding: 14px;
-}
-
-
-.parameter span {
+    height: auto;
 
     display: block;
+}
 
-    font-size: 11px;
+.hub-right-logo {
 
-    color: #7a898a;
+    width: 70px;
 
-    margin-bottom: 5px;
+    height: 70px;
+
+    object-fit: contain;
 }
 
 
-.parameter strong {
+/* NAVIGATION */
 
-    font-size: 20px;
-
-    color: #174b4e;
-}
-
-
-/* ALERT */
-
-.alert-box {
-
-    margin-top: 18px;
-
-    padding: 12px 15px;
-
-    background: #fff7e5;
-
-    border-left: 4px solid #e4a52c;
-
-    border-radius: 8px;
-
-    font-size: 12px;
-
-    color: #765818;
-}
-
-
-/* HUB ARCHITECTURE */
-
-.architecture-box {
-
-    background: #092f32;
-
-    color: white;
-
-    border-radius: 22px;
-
-    padding: 45px 25px;
-
-    overflow-x: auto;
-}
-
-
-.architecture {
-
-    min-width: 750px;
+.hub-nav {
 
     display: flex;
 
@@ -354,1076 +91,179 @@
 
     align-items: center;
 
-    gap: 15px;
+    flex-wrap: wrap;
+
+    border-top: 1px solid #edf1f2;
+}
+
+.hub-nav a {
+
+    color: #18363d;
+
+    text-decoration: none;
+
+    padding: 17px 18px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+.hub-nav a:hover {
+
+    color: #078d95;
+
+    background: #f1f8f8;
+}
+
+.hub-nav a.active {
+
+    color: #078d95;
+
+    border-bottom: 3px solid #078d95;
 }
 
 
-.arch-node {
+/* =====================================================
+   HERO
+===================================================== */
 
-    padding: 20px;
+.hub-hero {
 
-    min-width: 145px;
+    min-height: 430px;
 
-    text-align: center;
+    display: flex;
 
-    border: 1px solid rgba(255,255,255,.2);
+    align-items: center;
 
-    background: rgba(255,255,255,.07);
+    background-image:
 
-    border-radius: 15px;
+        linear-gradient(
+            90deg,
+            rgba(3,28,34,.92),
+            rgba(3,28,34,.65),
+            rgba(3,28,34,.35)
+        ),
+
+        url("../assets/images/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+.hub-hero-content {
+
+    width: min(1150px, 92%);
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+.hub-label {
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    border-radius: 30px;
+
+    color: #69e2dc;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hub-hero h1 {
+
+    margin: 0 0 20px;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    line-height: 1;
+
+    color: white;
+}
+
+.hub-hero p {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #d7e7ea;
+
+    line-height: 1.8;
+
+    font-size: 17px;
 }
 
 
-.arch-node strong {
+/* =====================================================
+   MAIN
+===================================================== */
 
-    display: block;
+.hub-main {
 
-    margin-bottom: 7px;
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding: 65px 0 90px;
 }
 
 
-.arch-node small {
+/* =====================================================
+   HUB STATUS
+===================================================== */
 
-    opacity: .65;
-}
+.hub-status {
 
+    background: white;
 
-.arch-arrow {
+    border: 1px solid #dce7e9;
 
-    font-size: 28px;
+    border-radius: 18px;
 
-    color: #62c8c3;
-}
-
-
-/* SECURITY */
-
-.security-grid {
+    padding: 22px 25px;
 
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+        1.4fr
+        1fr
+        1fr
+        1fr;
 
     gap: 18px;
+
+    margin-bottom: 60px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
 }
 
+.status-box {
 
-.security-card {
-
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 16px;
-
-    border: 1px solid #e1e9e9;
+    padding: 12px;
 }
 
+.status-box small {
 
-.security-icon {
+    display: block;
 
-    font-size: 30px;
+    color: #7b8b90;
 
-    margin-bottom: 15px;
-}
-
-
-.security-card h3 {
-
-    margin-bottom: 8px;
-
-    color: #174b4e;
-}
-
-
-.security-card p {
-
-    font-size: 13px;
-
-    line-height: 1.6;
-
-    color: #718082;
-}
-
-
-/* FOOTER NOTE */
-
-.hub-note {
-
-    text-align: center;
-
-    padding: 30px 20px 60px;
-
-    color: #7a898a;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* MOBILE */
-
-@media(max-width:700px) {
-
-    .hub-status-bar {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .hub-section {
-        padding: 45px 0;
-    }
-
-    .hub-section-title h2 {
-        font-size: 28px;
-    }
-
-    .parameter-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body class="hub-page">
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="site-header">
-
-    <div class="header-top">
-
-
-        <!-- LEFT LOGO -->
-
-        <div class="brand-left">
-
-            <a href="../index.html">
-
-                <img
-                    src="../assets/images/left-logo.jpg"
-                    alt="RAKSALA Logo"
-                    class="left-logo">
-
-            </a>
-
-        </div>
-
-
-        <!-- SEARCH -->
-
-        <div class="header-search">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search..."
-                aria-label="Search">
-
-            <button
-                type="button"
-                onclick="performSearch()">
-
-                🔍
-
-            </button>
-
-        </div>
-
-
-        <!-- RIGHT LOGO -->
-
-        <div class="brand-right">
-
-            <img
-                src="../assets/images/right-logo.jpg"
-                alt="Organization Logo"
-                class="right-logo">
-
-        </div>
-
-
-        <!-- LANGUAGE -->
-
-        <div class="language-wrapper">
-
-            <button
-                class="language-button"
-                id="languageButton">
-
-                🌐
-
-                <span id="currentLanguage">
-                    English
-                </span>
-
-                <span class="arrow">
-                    ▾
-                </span>
-
-            </button>
-
-            <div
-                class="language-menu"
-                id="languageMenu">
-
-                <button onclick="changeLanguage('en')">
-                    English
-                </button>
-
-                <button onclick="changeLanguage('hi')">
-                    हिन्दी
-                </button>
-
-                <button onclick="changeLanguage('ta')">
-                    தமிழ்
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- NAVIGATION -->
-
-    <nav class="main-nav">
-
-        <a href="../index.html">
-            Home
-        </a>
-
-        <a href="about.html">
-            About RAKSALA
-        </a>
-
-        <a href="system.html">
-            System
-        </a>
-
-        <a href="monitoring.html">
-            Monitoring
-        </a>
-
-        <a href="hub.html"
-           class="active">
-            Hub
-        </a>
-
-        <a href="documents.html">
-            Documents
-        </a>
-
-        <a href="resources.html">
-            Resources
-        </a>
-
-        <a href="connect.html">
-            Connect
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =====================================================
-     HUB HERO
-===================================================== -->
-
-<section class="hub-hero">
-
-    <div class="hub-container">
-
-        <span class="hub-badge">
-            AUTHORIZED COMMUNICATION INTERFACE
-        </span>
-
-        <h1>
-            RAKSALA HUB
-        </h1>
-
-        <p>
-            Centralized monitoring and communication
-            interface for authorized RAKSALA nodes
-            deployed in high-altitude environments.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     STATUS
-===================================================== -->
-
-<div class="hub-container">
-
-    <div class="hub-status-bar">
-
-        <div class="hub-online">
-
-            <span class="hub-dot"></span>
-
-            HUB ONLINE
-
-        </div>
-
-        <div>
-
-            <strong>
-                Network:
-            </strong>
-
-            AUTHORIZED PRIVATE NETWORK
-
-        </div>
-
-        <div class="hub-time">
-
-            Last refresh:
-            <span id="hubTime">
-                --:--:--
-
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     NODES
-===================================================== -->
-
-<section class="hub-section">
-
-    <div class="hub-container">
-
-        <div class="hub-section-title">
-
-            <span>
-                NODE MANAGEMENT
-            </span>
-
-            <h2>
-                Connected RAKSALA Nodes
-            </h2>
-
-        </div>
-
-
-        <div class="node-grid">
-
-
-            <!-- NODE 01 -->
-
-            <div class="node-card">
-
-                <div class="node-top">
-
-                    <span class="node-name">
-                        RAKSALA-01
-                    </span>
-
-                    <span class="node-status">
-                        ONLINE
-                    </span>
-
-                </div>
-
-
-                <div class="node-location">
-                    High-Altitude Node • Zone A
-                </div>
-
-
-                <div class="parameter-grid">
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Temperature
-                        </span>
-
-                        <strong id="node1Temp">
-                            -18.4°C
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Humidity
-                        </span>
-
-                        <strong id="node1Humidity">
-                            38%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Pressure
-                        </span>
-
-                        <strong id="node1Pressure">
-                            61 kPa
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            UV Index
-                        </span>
-
-                        <strong id="node1UV">
-                            6.8
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Dust
-                        </span>
-
-                        <strong id="node1Dust">
-                            28 µg/m³
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Battery
-                        </span>
-
-                        <strong id="node1Battery">
-                            87%
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="alert-box">
-
-                    ● SYSTEM STATUS:
-                    NORMAL
-
-                </div>
-
-            </div>
-
-
-
-            <!-- NODE 02 -->
-
-            <div class="node-card">
-
-                <div class="node-top">
-
-                    <span class="node-name">
-                        RAKSALA-02
-                    </span>
-
-                    <span class="node-status">
-                        ONLINE
-                    </span>
-
-                </div>
-
-
-                <div class="node-location">
-                    High-Altitude Node • Zone B
-                </div>
-
-
-                <div class="parameter-grid">
-
-                    <div class="parameter">
-
-                        <span>
-                            Temperature
-                        </span>
-
-                        <strong>
-                            -24.1°C
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Humidity
-                        </span>
-
-                        <strong>
-                            31%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Pressure
-                        </span>
-
-                        <strong>
-                            57 kPa
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            UV Index
-                        </span>
-
-                        <strong>
-                            7.4
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Dust
-                        </span>
-
-                        <strong>
-                            41 µg/m³
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Battery
-                        </span>
-
-                        <strong>
-                            74%
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="alert-box">
-
-                    ● SYSTEM STATUS:
-                    NORMAL
-
-                </div>
-
-            </div>
-
-
-
-            <!-- NODE 03 -->
-
-            <div class="node-card">
-
-                <div class="node-top">
-
-                    <span class="node-name">
-                        RAKSALA-03
-                    </span>
-
-                    <span
-                        class="node-status"
-                        style="
-                        background:#fff3df;
-                        color:#a46b0b;
-                        ">
-
-                        STANDBY
-
-                    </span>
-
-                </div>
-
-
-                <div class="node-location">
-                    High-Altitude Node • Zone C
-                </div>
-
-
-                <div class="parameter-grid">
-
-                    <div class="parameter">
-
-                        <span>
-                            Temperature
-                        </span>
-
-                        <strong>
-                            -12.7°C
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Humidity
-                        </span>
-
-                        <strong>
-                            46%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Pressure
-                        </span>
-
-                        <strong>
-                            64 kPa
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            UV Index
-                        </span>
-
-                        <strong>
-                            5.9
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Dust
-                        </span>
-
-                        <strong>
-                            19 µg/m³
-                        </strong>
-
-                    </div>
-
-
-                    <div class="parameter">
-
-                        <span>
-                            Battery
-                        </span>
-
-                        <strong>
-                            62%
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="alert-box">
-
-                    ● COMMUNICATION:
-                    STANDBY
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ARCHITECTURE
-===================================================== -->
-
-<section class="hub-section">
-
-    <div class="hub-container">
-
-        <div class="hub-section-title">
-
-            <span>
-                COMMUNICATION ARCHITECTURE
-            </span>
-
-            <h2>
-                RAKSALA Hub Network
-            </h2>
-
-        </div>
-
-
-        <div class="architecture-box">
-
-            <div class="architecture">
-
-
-                <div class="arch-node">
-
-                    <strong>
-                        RAKSALA NODE
-                    </strong>
-
-                    <small>
-                        Sensors
-                    </small>
-
-                </div>
-
-
-                <div class="arch-arrow">
-                    →
-                </div>
-
-
-                <div class="arch-node">
-
-                    <strong>
-                        AUTHENTICATED LINK
-                    </strong>
-
-                    <small>
-                        Secure Channel
-                    </small>
-
-                </div>
-
-
-                <div class="arch-arrow">
-                    →
-                </div>
-
-
-                <div class="arch-node">
-
-                    <strong>
-                        RAKSALA HUB
-                    </strong>
-
-                    <small>
-                        Edge Processing
-                    </small>
-
-                </div>
-
-
-                <div class="arch-arrow">
-                    →
-                </div>
-
-
-                <div class="arch-node">
-
-                    <strong>
-                        AUTHORIZED CENTRE
-                    </strong>
-
-                    <small>
-                        Monitoring
-                    </small>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SECURITY
-===================================================== -->
-
-<section class="hub-section">
-
-    <div class="hub-container">
-
-        <div class="hub-section-title">
-
-            <span>
-                HUB FUNCTIONS
-            </span>
-
-            <h2>
-                Controlled Communication & Monitoring
-            </h2>
-
-        </div>
-
-
-        <div class="security-grid">
-
-
-            <div class="security-card">
-
-                <div class="security-icon">
-                    🔐
-                </div>
-
-                <h3>
-                    Authentication
-                </h3>
-
-                <p>
-                    Authorized nodes can be validated
-                    before participating in the network.
-                </p>
-
-            </div>
-
-
-            <div class="security-card">
-
-                <div class="security-icon">
-                    🛡️
-                </div>
-
-                <h3>
-                    Protected Communication
-                </h3>
-
-                <p>
-                    Communication can be designed around
-                    authenticated and encrypted channels.
-                </p>
-
-            </div>
-
-
-            <div class="security-card">
-
-                <div class="security-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Edge Processing
-                </h3>
-
-                <p>
-                    Environmental data can be processed
-                    locally before being forwarded.
-                </p>
-
-            </div>
-
-
-            <div class="security-card">
-
-                <div class="security-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Central Monitoring
-                </h3>
-
-                <p>
-                    Operators can view node condition,
-                    alerts and environmental parameters.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     NOTE
-===================================================== -->
-
-<div class="hub-note">
-
-    RAKSALA Hub is presented here as a demonstration
-    monitoring interface. Communication security,
-    spectrum use, authentication and deployment must
-    follow applicable authorization and security
-    requirements.
-
-</div>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script src="../js/script.js"></script>
-
-
-<script>
-
-/* =====================================================
-   HUB CLOCK
-===================================================== */
-
-function updateHubTime() {
-
-    const now = new Date();
-
-    const time =
-        now.toLocaleTimeString();
-
-    const element =
-        document.getElementById("hubTime");
-
-    if (element) {
-
-        element.textContent = time;
-
-    }
-
-}
-
-updateHubTime();
-
-setInterval(
-    updateHubTime,
-    1000
-);
-
-
-/* =====================================================
-   DEMONSTRATION DATA
-===================================================== */
-
-let temperature = -18.4;
-let humidity = 38;
-let battery = 87;
-
-function updateDemoData() {
-
-    temperature +=
-        (Math.random() - 0.5) * 0.4;
-
-    humidity +=
-        (Math.random() - 0.5) * 0.6;
-
-    battery -=
-        Math.random() * 0.01;
-
-
-    const temp =
-        document.getElementById(
-            "node1Temp"
-        );
-
-    const hum =
-        document.getElementById(
-            "node1Humidity"
-        );
-
-    const batt =
-        document.getElementById(
-            "node1Battery"
-        );
-
-
-    if (temp) {
-
-        temp.textContent =
-            temperature.toFixed(1) + "°C";
-
-    }
-
-
-    if (hum) {
-
-        hum.textContent =
-            Math.round(humidity) + "%";
-
-    }
-
-
-    if (batt) {
-
-        batt.textContent =
-            Math.round(battery) + "%";
-
-    }
-
-}
-
-
-/* Update every 5 seconds */
-
-setInterval(
-    updateDemoData,
-    5000
-);
-
-</script>
-
-
-</body>
-
-</html>
+    font
