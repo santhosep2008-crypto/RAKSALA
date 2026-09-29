@@ -4413,3 +4413,185 @@ section {
         grid-template-columns: 1fr;
     }
 }
+   /* =====================================================
+   RAKSALA HERO
+===================================================== */
+
+.raksala-hero {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("../assets/images/hero.jpg");
+
+    background-size: cover;
+    background-position: center center;
+
+    overflow: hidden;
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 32, 34, 0.82) 0%,
+            rgba(5, 32, 34, 0.60) 45%,
+            rgba(5, 32, 34, 0.18) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 90%);
+
+    margin: 0 auto;
+
+    color: white;
+
+    padding: 80px 0;
+}
+
+
+/* SMALL LABEL */
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid
+        rgba(255,255,255,.55);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+/* TITLE */
+
+.hero-content h1 {
+
+    max-width: 750px;
+
+    font-size:
+        clamp(42px, 6vw, 78px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin: 0 0 25px;
+}
+
+
+/* DESCRIPTION */
+
+.hero-content p {
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,.90);
+
+    margin-bottom: 32px;
+}
+
+
+/* BUTTON */
+
+.hero-button {
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: white;
+
+    color: #17494b;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition: .25s ease;
+
+    text-decoration: none;
+}
+
+
+.hero-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #e8f3f2;
+
+    color: #0d3638;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .raksala-hero {
+
+        min-height: 560px;
+
+        background-position: center;
+    }
+
+    .hero-content {
+
+        padding: 60px 0;
+    }
+
+    .hero-content h1 {
+
+        font-size: 43px;
+    }
+
+    .hero-content p {
+
+        font-size: 15px;
+    }
+
+}
