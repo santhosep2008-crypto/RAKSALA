@@ -2,1097 +2,628 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-content="RAKSALA Environmental Monitoring Dashboard">
-
-<title>RAKSALA | Monitoring</title>
-
-<link rel="stylesheet"
-href="../css/style.css">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-
-<style>
-
-/* =====================================================
-   RAKSALA MONITORING PAGE
-===================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Inter, Arial, sans-serif;
-    background: #f3f7f8;
-    color: #12313a;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.monitor-header {
-    background: #ffffff;
-    border-bottom: 1px solid #dce6e8;
-    position: relative;
-    z-index: 20;
-}
-
-.monitor-header-top {
-    min-height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-
-    width: min(1250px, 92%);
-    margin: auto;
-}
-
-.monitor-logo {
-    width: 175px;
-    height: auto;
-    display: block;
-}
-
-.monitor-right-logo {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-}
-
-
-/* NAVIGATION */
-
-.monitor-nav {
-    border-top: 1px solid #edf1f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
-}
-
-.monitor-nav a {
-    text-decoration: none;
-    color: #142b33;
-    font-weight: 700;
-    font-size: 14px;
-
-    padding: 18px 20px;
-
-    transition: .2s ease;
-}
-
-.monitor-nav a:hover {
-    color: #078d95;
-    background: #f2f8f8;
-}
-
-.monitor-nav a.active {
-    color: #078d95;
-    border-bottom: 3px solid #078d95;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.monitor-hero {
-
-    min-height: 390px;
-
-    display: flex;
-    align-items: center;
-
-    position: relative;
-
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(3,30,35,.88),
-            rgba(3,30,35,.58),
-            rgba(3,30,35,.30)
-        ),
-        url("../assets/images/hero.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-}
-
-.monitor-hero-content {
-
-    width: min(1100px, 90%);
-    margin: auto;
-
-    padding: 75px 0;
-}
-
-.monitor-eyebrow {
-
-    color: #5ce1dc;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-}
-
-.monitor-hero h1 {
-
-    margin: 0 0 18px;
-
-    font-size: clamp(42px, 6vw, 68px);
-
-    line-height: 1.05;
-
-    color: white;
-}
-
-.monitor-hero p {
-
-    max-width: 720px;
-
-    margin: 0;
-
-    color: #e0edef;
-
-    font-size: 17px;
-
-    line-height: 1.75;
-}
-
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-.monitor-main {
-
-    width: min(1200px, 92%);
-
-    margin: auto;
-
-    padding: 65px 0 90px;
-}
-
-
-/* =====================================================
-   STATUS BAR
-===================================================== */
-
-.status-bar {
-
-    display: grid;
-
-    grid-template-columns:
-        1.4fr
-        1fr
-        1fr
-        1fr;
-
-    gap: 16px;
-
-    margin-bottom: 55px;
-}
-
-.status-card {
-
-    background: white;
-
-    border: 1px solid #dce7e9;
-
-    border-radius: 14px;
-
-    padding: 22px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.05);
-}
-
-.status-card.main {
-
-    background:
-        linear-gradient(
-            135deg,
-            #063947,
-            #08727a
-        );
-
-    color: white;
-
-    border: none;
-}
-
-.status-card small {
-
-    display: block;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    color: #809096;
-
-    margin-bottom: 9px;
-}
-
-.status-card.main small {
-    color: #a8dce0;
-}
-
-.status-card h3 {
-
-    margin: 0;
-
-    font-size: 20px;
-}
-
-.status-value {
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    color: #153b45;
-}
-
-.status-card.main .status-value {
-    color: white;
-}
-
-.online {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 12px;
-
-    font-size: 12px;
-
-    font-weight: 800;
-}
-
-.online-dot {
-
-    width: 9px;
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: #36d27e;
-
-    box-shadow:
-        0 0 0 5px rgba(54,210,126,.15);
-}
-
-
-/* =====================================================
-   SECTION TITLE
-===================================================== */
-
-.section-heading {
-
-    margin-bottom: 28px;
-}
-
-.section-label {
-
-    color: #078f98;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.5px;
-}
-
-.section-heading h2 {
-
-    margin: 8px 0 10px;
-
-    font-size: 32px;
-
-    color: #082a35;
-}
-
-.section-heading p {
-
-    max-width: 760px;
-
-    color: #6c7e85;
-
-    line-height: 1.7;
-
-    margin: 0;
-}
-
-
-/* =====================================================
-   SENSOR GRID
-===================================================== */
-
-.sensor-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 22px;
-
-    margin-bottom: 60px;
-}
-
-.sensor-card {
-
-    background: white;
-
-    border: 1px solid #dce7e9;
-
-    border-radius: 18px;
-
-    padding: 27px;
-
-    box-shadow:
-        0 9px 28px rgba(0,0,0,.05);
-
-    transition: .25s ease;
-}
-
-.sensor-card:hover {
-
-    transform: translateY(-4px);
-
-    border-color: #20b8bc;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.08);
-}
-
-.sensor-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 25px;
-}
-
-.sensor-name {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-.sensor-icon {
-
-    width: 52px;
-    height: 52px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 13px;
-
-    background: #e8f7f7;
-
-    color: #078f98;
-
-    font-size: 23px;
-}
-
-.sensor-name h3 {
-
-    margin: 0 0 5px;
-
-    color: #092d38;
-
-    font-size: 18px;
-}
-
-.sensor-name span {
-
-    color: #849197;
-
-    font-size: 12px;
-}
-
-.demo-badge {
-
-    background: #fff4dd;
-
-    color: #b87b0b;
-
-    border-radius: 20px;
-
-    padding: 6px 10px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: .8px;
-}
-
-
-/* VALUE */
-
-.sensor-value {
-
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 6px;
-
-    margin-bottom: 17px;
-}
-
-.sensor-value strong {
-
-    font-size: 43px;
-
-    line-height: 1;
-
-    color: #082c37;
-}
-
-.sensor-value span {
-
-    font-size: 14px;
-
-    color: #718188;
-}
-
-
-/* STATUS */
-
-.sensor-condition {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 12px;
-
-    margin-bottom: 8px;
-}
-
-.sensor-condition span {
-    color: #718188;
-}
-
-.sensor-condition strong {
-    color: #17965c;
-}
-
-
-/* PROGRESS */
-
-.progress {
-
-    height: 7px;
-
-    border-radius: 20px;
-
-    background: #e9eff0;
-
-    overflow: hidden;
-}
-
-.progress-bar {
-
-    height: 100%;
-
-    width: 50%;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #079ca5,
-            #4bd6cd
-        );
-
-    transition: width .5s ease;
-}
-
-
-/* STATS */
-
-.sensor-stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin-top: 20px;
-}
-
-.sensor-stat {
-
-    background: #f4f8f9;
-
-    padding: 11px;
-
-    border-radius: 8px;
-}
-
-.sensor-stat small {
-
-    display: block;
-
-    color: #859298;
-
-    font-size: 9px;
-
-    margin-bottom: 4px;
-}
-
-.sensor-stat strong {
-
-    color: #193b45;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   TREND PANEL
-===================================================== */
-
-.trend-panel {
-
-    background: white;
-
-    border: 1px solid #dce7e9;
-
-    border-radius: 18px;
-
-    padding: 27px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.05);
-
-    margin-bottom: 55px;
-}
-
-.trend-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
-
-.trend-header h3 {
-
-    margin: 0;
-
-    color: #092d38;
-
-    font-size: 20px;
-}
-
-.trend-header select {
-
-    border: 1px solid #d7e2e5;
-
-    border-radius: 8px;
-
-    padding: 9px 12px;
-
-    background: white;
-
-    color: #183943;
-}
-
-
-/* GRAPH */
-
-.graph {
-
-    height: 280px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 10px;
-
-    border-bottom: 1px solid #dbe5e7;
-
-    padding: 15px 5px 0;
-}
-
-.graph-column {
-
-    flex: 1;
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: flex-end;
-}
-
-.graph-bar {
-
-    width: 100%;
-
-    min-height: 8px;
-
-    border-radius:
-        6px 6px 0 0;
-
-    background:
-        linear-gradient(
-            to top,
-            #078f98,
-            #55d9d0
-        );
-
-    transition:
-        height .4s ease;
-}
-
-.graph-labels {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #849197;
-
-    font-size: 10px;
-
-    margin-top: 10px;
-}
-
-
-/* =====================================================
-   INFORMATION
-===================================================== */
-
-.info-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin-bottom: 55px;
-}
-
-.info-card {
-
-    background: white;
-
-    border: 1px solid #dce7e9;
-
-    border-radius: 14px;
-
-    padding: 22px;
-}
-
-.info-card h3 {
-
-    margin: 0 0 8px;
-
-    color: #092d38;
-
-    font-size: 17px;
-}
-
-.info-card p {
-
-    margin: 0;
-
-    color: #718188;
-
-    line-height: 1.7;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   DEMO NOTICE
-===================================================== */
-
-.demo-notice {
-
-    background:
-        linear-gradient(
-            135deg,
-            #082f3d,
-            #075765
-        );
-
-    color: white;
-
-    border-radius: 18px;
-
-    padding: 28px;
-
-    margin-bottom: 50px;
-}
-
-.demo-notice h3 {
-
-    margin: 0 0 8px;
-
-    color: white;
-}
-
-.demo-notice p {
-
-    margin: 0;
-
-    color: #c5dce0;
-
-    line-height: 1.7;
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.monitor-footer {
-
-    background:
-        linear-gradient(
-            rgba(4,31,36,.92),
-            rgba(4,31,36,.96)
-        ),
-        url("../assets/images/footer-mountains.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    color: white;
-
-    padding: 45px 5% 25px;
-}
-
-.footer-inner {
-
-    width: min(1200px, 92%);
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-.footer-inner h3 {
-
-    margin: 0 0 8px;
-
-    color: white;
-}
-
-.footer-inner p {
-
-    color: #bfd0d4;
-
-    margin: 0;
-
-    font-size: 13px;
-}
-
-.footer-bottom {
-
-    width: min(1200px, 92%);
-
-    margin: 30px auto 0;
-
-    padding-top: 20px;
-
-    border-top:
-        1px solid rgba(255,255,255,.15);
-
-    color: #9db2b7;
-
-    font-size: 12px;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:1000px) {
-
-    .status-bar {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .info-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-}
-
-
-@media(max-width:750px) {
-
-    .monitor-header-top {
-
-        min-height: 80px;
-    }
-
-    .monitor-logo {
-
-        width: 130px;
-    }
-
-    .monitor-right-logo {
-
-        width: 55px;
-        height: 55px;
-    }
-
-    .monitor-nav {
-
-        overflow-x: auto;
-
-        justify-content: flex-start;
-
-        flex-wrap: nowrap;
-    }
-
-    .monitor-nav a {
-
-        white-space: nowrap;
-
-        padding: 14px 12px;
-
-        font-size: 12px;
-    }
-
-    .monitor-hero {
-
-        min-height: 420px;
-    }
-
-    .monitor-hero-content {
-
-        padding: 65px 0;
-    }
-
-    .sensor-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .status-bar {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .trend-header {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-    }
-
-    .footer-inner {
-
-        flex-direction: column;
-    }
-
-}
-
-
-@media(max-width:450px) {
-
-    .monitor-main {
-
-        width: 94%;
-    }
-
-    .sensor-card {
-
-        padding: 20px;
-    }
-
-    .sensor-value strong {
-
-        font-size: 36px;
-    }
-
-    .sensor-stats {
-
-        gap: 6px;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAKSALA Monitoring | Protect • Power • Connect</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f6;
+            color: #173f42;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        .rak-header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce6e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 12px 5%;
+        }
+
+        .logo-left {
+            width: 150px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .logo-right {
+            width: 120px;
+            height: 60px;
+            object-fit: contain;
+            margin-left: auto;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 350px;
+            flex: 1;
+            margin-left: auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 11px 15px;
+            border: 1px solid #ccd9d8;
+            border-radius: 7px 0 0 7px;
+            outline: none;
+        }
+
+        .search-box button {
+            border: none;
+            background: #174b4e;
+            color: white;
+            padding: 0 17px;
+            border-radius: 0 7px 7px 0;
+            cursor: pointer;
+        }
+
+        .language {
+            position: relative;
+        }
+
+        .language button {
+            border: 1px solid #ccd9d8;
+            background: white;
+            padding: 10px 14px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .language-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background: white;
+            border: 1px solid #d5dfde;
+            box-shadow: 0 8px 20px rgba(0,0,0,.12);
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 130px;
+        }
+
+        .language-menu button {
+            display: block;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            text-align: left;
+            background: white;
+        }
+
+        .language-menu button:hover {
+            background: #edf5f4;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 0 5% 12px;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #35575a;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            background: #174b4e;
+            color: white;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 390px;
+            background:
+                linear-gradient(rgba(7,35,38,.58), rgba(7,35,38,.7)),
+                url("../assets/images/hero.jpg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            padding: 70px 7%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            line-height: 1.7;
+            font-size: 17px;
+            color: #e2eeee;
+        }
+
+        /* ================= STATUS ================= */
+
+        .status-wrap {
+            max-width: 1200px;
+            margin: -35px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .status-bar {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.12);
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #5d7173;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #2b9b6f;
+            border-radius: 50%;
+        }
+
+        .status-item strong {
+            color: #174b4e;
+        }
+
+        /* ================= MONITORING ================= */
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: #548582;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            margin-top: 8px;
+            color: #173f42;
+        }
+
+        .section-heading p {
+            margin-top: 10px;
+            color: #6c7e80;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* ================= SENSOR CARDS ================= */
+
+        .monitor-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .monitor-card {
+            background: white;
+            border: 1px solid #dfe9e8;
+            border-radius: 18px;
+            padding: 25px 20px;
+            box-shadow: 0 6px 18px rgba(20,60,60,.05);
+            transition: .25s;
+        }
+
+        .monitor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(20,60,60,.1);
+        }
+
+        .sensor-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 13px;
+            background: #eaf3f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sensor-name {
+            display: block;
+            font-size: 13px;
+            color: #718284;
+            margin-bottom: 8px;
+        }
+
+        .sensor-value {
+            display: block;
+            font-size: 27px;
+            color: #174b4e;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .sensor-status {
+            font-size: 11px;
+            color: #338467;
+            font-weight: bold;
+        }
+
+        /* ================= GRAPH ================= */
+
+        .graph-card {
+            margin-top: 30px;
+            background: white;
+            border: 1px solid #dfe9e8;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .graph-title {
+            margin-bottom: 25px;
+        }
+
+        .graph-title h3 {
+            color: #174b4e;
+            margin-bottom: 5px;
+        }
+
+        .graph-title p {
+            color: #778789;
+            font-size: 13px;
+        }
+
+        .graph {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            border-left: 1px solid #d8e3e2;
+            border-bottom: 1px solid #d8e3e2;
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    transparent 0,
+                    transparent 43px,
+                    #e8eeee 44px
+                );
+        }
+
+        .line {
+            position: absolute;
+            left: 2%;
+            right: 2%;
+            top: 25%;
+            height: 100px;
+        }
+
+        .line svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .line polyline {
+            fill: none;
+            stroke: #31827d;
+            stroke-width: 3;
+            vector-effect: non-scaling-stroke;
+        }
+
+        /* ================= NOTICE ================= */
+
+        .notice {
+            margin-top: 25px;
+            padding: 18px 20px;
+            border-left: 4px solid #d39b2e;
+            background: #fff8e8;
+            border-radius: 8px;
+            color: #765f29;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ================= INFO ================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: #edf4f3;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: #174b4e;
+        }
+
+        .info-card p {
+            color: #647678;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background:
+                linear-gradient(rgba(5,27,29,.82), rgba(5,27,29,.9)),
+                url("../assets/images/footer-mountains.jpg") center/cover no-repeat;
+
+            color: white;
+            padding: 60px 6% 25px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            color: #c8d7d7;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #c8d7d7;
+            margin-bottom: 9px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.15);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            font-size: 12px;
+            color: #b9caca;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:1000px) {
+            .monitor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:700px) {
+
+            .header-top {
+                flex-wrap: wrap;
+            }
+
+            .logo-left {
+                width: 120px;
+            }
+
+            .logo-right {
+                width: 90px;
+            }
+
+            .search-box {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none;
+            }
+
+            .hero {
+                min-height: 330px;
+                padding: 55px 25px;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .monitor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<header class="rak-header">
 
-<header class="monitor-header">
-
-    <div class="monitor-header-top">
+    <div class="header-top">
 
         <a href="../index.html">
-
             <img
                 src="../assets/images/left-logo.jpg"
-                alt="RAKSALA"
-                class="monitor-logo">
-
+                class="logo-left"
+                alt="RAKSALA">
         </a>
 
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search RAKSALA...">
 
-        <a href="../index.html">
+            <button onclick="searchPage()">🔍</button>
+        </div>
 
-            <img
-                src="../assets/images/right-logo.jpg"
-                alt="Institution"
-                class="monitor-right-logo">
+        <img
+            src="../assets/images/right-logo.jpg"
+            class="logo-right"
+            alt="Organization">
 
-        </a>
+        <div class="language">
+
+            <button onclick="toggleLanguage()">
+                🌐 English ▾
+            </button>
+
+            <div
+                class="language-menu"
+                id="languageMenu">
+
+                <button onclick="setLanguage('English')">
+                    English
+                </button>
+
+                <button onclick="setLanguage('हिन्दी')">
+                    हिन्दी
+                </button>
+
+                <button onclick="setLanguage('தமிழ்')">
+                    தமிழ்
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
+    <nav class="main-nav">
 
-    <nav class="monitor-nav">
-
-        <a href="../index.html">
-            Home
-        </a>
-
-        <a href="about.html">
-            About RAKSALA
-        </a>
-
-        <a href="system.html">
-            System
-        </a>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About RAKSALA</a>
+        <a href="system.html">System</a>
 
         <a
             href="monitoring.html"
             class="active">
-
             Monitoring
-
         </a>
 
-        <a href="hub.html">
-            Hub
-        </a>
-
-        <a href="documents.html">
-            Documents
-        </a>
-
-        <a href="resources.html">
-            Resources
-        </a>
-
-        <a href="connect.html">
-            Connect
-        </a>
+        <a href="hub.html">Hub</a>
+        <a href="documents.html">Documents</a>
+        <a href="resources.html">Resources</a>
+        <a href="connect.html">Connect</a>
 
     </nav>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<section class="hero">
 
-<section class="monitor-hero">
+    <div class="hero-content">
 
-    <div class="monitor-hero-content">
+        <span class="hero-label">
+            ENVIRONMENTAL INTELLIGENCE PLATFORM
+        </span>
 
-        <div class="monitor-eyebrow">
-            RAKSALA • ENVIRONMENTAL MONITORING
-        </div>
-
-        <h1>
-            Monitoring Dashboard
-        </h1>
+        <h1>RAKSALA Monitoring</h1>
 
         <p>
             Environmental condition monitoring for
-            RAKSALA systems operating in high-altitude
-            and extreme environments.
+            high-altitude deployments, providing
+            continuous visibility of temperature,
+            humidity, pressure, UV exposure and dust.
         </p>
 
     </div>
@@ -1100,967 +631,356 @@ body {
 </section>
 
 
+<!-- ================= STATUS ================= -->
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<div class="status-wrap">
 
-<main class="monitor-main">
+    <div class="status-bar">
 
+        <div class="status-item">
+            <span class="status-dot"></span>
+            <strong>DEMO SYSTEM</strong>
+        </div>
 
-<!-- =====================================================
-     STATUS
-===================================================== -->
+        <div class="status-item">
+            Node:
+            <strong>RAKSALA-01</strong>
+        </div>
 
-<section class="status-bar">
+        <div class="status-item">
+            Data:
+            <strong>Demonstration Values</strong>
+        </div>
 
-
-    <div class="status-card main">
-
-        <small>
-            NODE STATUS
-        </small>
-
-        <h3>
-            RAKSALA NODE-01
-        </h3>
-
-        <div class="online">
-
-            <span class="online-dot"></span>
-
-            DEMONSTRATION ONLINE
-
+        <div class="status-item">
+            Updated:
+            <strong id="clock">--:--:--</strong>
         </div>
 
     </div>
 
-
-    <div class="status-card">
-
-        <small>
-            DATA MODE
-        </small>
-
-        <div class="status-value">
-            DEMO DATA
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="status-card">
+<!-- ================= MONITORING ================= -->
 
-        <small>
-            PARAMETERS
-        </small>
+<section class="section">
 
-        <div class="status-value">
-            5 ACTIVE
-        </div>
+    <div class="container">
 
-    </div>
+        <div class="section-heading">
 
+            <span class="section-label">
+                ENVIRONMENTAL PARAMETERS
+            </span>
 
-    <div class="status-card">
+            <h2>System Monitoring</h2>
 
-        <small>
-            LAST UPDATE
-        </small>
-
-        <div
-            class="status-value"
-            id="clock">
-
-            --
+            <p>
+                Five environmental parameters are
+                represented in this demonstration
+                monitoring interface.
+            </p>
 
         </div>
 
-    </div>
 
+        <div class="monitor-grid">
 
-</section>
+            <!-- TEMPERATURE -->
 
+            <div class="monitor-card">
 
+                <div class="sensor-icon">🌡️</div>
 
-<!-- =====================================================
-     ENVIRONMENTAL PARAMETERS
-===================================================== -->
+                <span class="sensor-name">
+                    Temperature
+                </span>
 
-<section>
-
-
-    <div class="section-heading">
-
-        <div class="section-label">
-            ENVIRONMENTAL PARAMETERS
-        </div>
-
-        <h2>
-            RAKSALA Environmental Monitoring
-        </h2>
-
-        <p>
-            The interface below represents the five
-            environmental parameters monitored by the
-            RAKSALA sensing layer.
-        </p>
-
-    </div>
-
-
-
-    <div class="sensor-grid">
-
-
-        <!-- TEMPERATURE -->
-
-        <article class="sensor-card">
-
-            <div class="sensor-top">
-
-                <div class="sensor-name">
-
-                    <div class="sensor-icon">
-                        ❄
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Temperature
-                        </h3>
-
-                        <span>
-                            Ambient temperature
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="demo-badge">
-                    DEMO
-                </div>
-
-            </div>
-
-
-            <div class="sensor-value">
-
-                <strong id="temperature">
-                    -32.0
+                <strong
+                    class="sensor-value"
+                    id="temperature">
+                    -32.0°C
                 </strong>
 
-                <span>
-                    °C
+                <span class="sensor-status">
+                    ● NORMAL
                 </span>
 
             </div>
 
 
-            <div class="sensor-condition">
+            <!-- HUMIDITY -->
 
-                <span>
-                    Condition
+            <div class="monitor-card">
+
+                <div class="sensor-icon">💧</div>
+
+                <span class="sensor-name">
+                    Humidity
                 </span>
 
-                <strong id="temperatureStatus">
-                    COLD
+                <strong
+                    class="sensor-value"
+                    id="humidity">
+                    41%
                 </strong>
 
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="temperatureBar"
-                    style="width:40%">
-
-                </div>
-
-            </div>
-
-
-            <div class="sensor-stats">
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MIN
-                    </small>
-
-                    <strong>
-                        -38°C
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MAX
-                    </small>
-
-                    <strong>
-                        -28°C
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        AVG
-                    </small>
-
-                    <strong>
-                        -33°C
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- HUMIDITY -->
-
-        <article class="sensor-card">
-
-            <div class="sensor-top">
-
-                <div class="sensor-name">
-
-                    <div class="sensor-icon">
-                        💧
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Humidity
-                        </h3>
-
-                        <span>
-                            Relative humidity
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="demo-badge">
-                    DEMO
-                </div>
-
-            </div>
-
-
-            <div class="sensor-value">
-
-                <strong id="humidity">
-                    41
-                </strong>
-
-                <span>
-                    %
+                <span class="sensor-status">
+                    ● NORMAL
                 </span>
 
             </div>
 
 
-            <div class="sensor-condition">
+            <!-- PRESSURE -->
 
-                <span>
-                    Condition
+            <div class="monitor-card">
+
+                <div class="sensor-icon">◉</div>
+
+                <span class="sensor-name">
+                    Pressure
                 </span>
 
-                <strong id="humidityStatus">
-                    NORMAL
+                <strong
+                    class="sensor-value"
+                    id="pressure">
+                    58 kPa
                 </strong>
 
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="humidityBar"
-                    style="width:41%">
-
-                </div>
-
-            </div>
-
-
-            <div class="sensor-stats">
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MIN
-                    </small>
-
-                    <strong>
-                        35%
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MAX
-                    </small>
-
-                    <strong>
-                        47%
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        AVG
-                    </small>
-
-                    <strong>
-                        41%
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PRESSURE -->
-
-        <article class="sensor-card">
-
-            <div class="sensor-top">
-
-                <div class="sensor-name">
-
-                    <div class="sensor-icon">
-                        ◉
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Pressure
-                        </h3>
-
-                        <span>
-                            Atmospheric pressure
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="demo-badge">
-                    DEMO
-                </div>
-
-            </div>
-
-
-            <div class="sensor-value">
-
-                <strong id="pressure">
-                    58
-                </strong>
-
-                <span>
-                    kPa
+                <span class="sensor-status">
+                    ● NORMAL
                 </span>
 
             </div>
 
 
-            <div class="sensor-condition">
+            <!-- UV -->
 
-                <span>
-                    Condition
+            <div class="monitor-card">
+
+                <div class="sensor-icon">☀️</div>
+
+                <span class="sensor-name">
+                    UV Index
                 </span>
 
-                <strong id="pressureStatus">
-                    NORMAL
-                </strong>
-
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="pressureBar"
-                    style="width:58%">
-
-                </div>
-
-            </div>
-
-
-            <div class="sensor-stats">
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MIN
-                    </small>
-
-                    <strong>
-                        55
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MAX
-                    </small>
-
-                    <strong>
-                        61
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        AVG
-                    </small>
-
-                    <strong>
-                        58
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- UV -->
-
-        <article class="sensor-card">
-
-            <div class="sensor-top">
-
-                <div class="sensor-name">
-
-                    <div class="sensor-icon">
-                        ☀
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            UV Index
-                        </h3>
-
-                        <span>
-                            Ultraviolet exposure
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="demo-badge">
-                    DEMO
-                </div>
-
-            </div>
-
-
-            <div class="sensor-value">
-
-                <strong id="uv">
+                <strong
+                    class="sensor-value"
+                    id="uv">
                     7.2
                 </strong>
 
-                <span>
-                    index
+                <span class="sensor-status">
+                    ● MONITORED
                 </span>
 
             </div>
 
 
-            <div class="sensor-condition">
+            <!-- DUST -->
 
-                <span>
-                    Exposure
+            <div class="monitor-card">
+
+                <div class="sensor-icon">🌫️</div>
+
+                <span class="sensor-name">
+                    Dust Level
                 </span>
 
-                <strong id="uvStatus">
-                    HIGH
+                <strong
+                    class="sensor-value"
+                    id="dust">
+                    34 µg/m³
                 </strong>
 
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="uvBar"
-                    style="width:72%">
-
-                </div>
-
-            </div>
-
-
-            <div class="sensor-stats">
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MIN
-                    </small>
-
-                    <strong>
-                        5.2
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MAX
-                    </small>
-
-                    <strong>
-                        8.4
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        AVG
-                    </small>
-
-                    <strong>
-                        7.0
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- DUST -->
-
-        <article class="sensor-card">
-
-            <div class="sensor-top">
-
-                <div class="sensor-name">
-
-                    <div class="sensor-icon">
-                        ◌
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Dust
-                        </h3>
-
-                        <span>
-                            Particulate concentration
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="demo-badge">
-                    DEMO
-                </div>
-
-            </div>
-
-
-            <div class="sensor-value">
-
-                <strong id="dust">
-                    34
-                </strong>
-
-                <span>
-                    µg/m³
+                <span class="sensor-status">
+                    ● NORMAL
                 </span>
 
-            </div>
-
-
-            <div class="sensor-condition">
-
-                <span>
-                    Air condition
-                </span>
-
-                <strong id="dustStatus">
-                    NORMAL
-                </strong>
-
-            </div>
-
-
-            <div class="progress">
-
-                <div
-                    class="progress-bar"
-                    id="dustBar"
-                    style="width:34%">
-
-                </div>
-
-            </div>
-
-
-            <div class="sensor-stats">
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MIN
-                    </small>
-
-                    <strong>
-                        20
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        MAX
-                    </small>
-
-                    <strong>
-                        48
-                    </strong>
-
-                </div>
-
-                <div class="sensor-stat">
-
-                    <small>
-                        AVG
-                    </small>
-
-                    <strong>
-                        34
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     TREND
-===================================================== -->
-
-<section>
-
-    <div class="trend-panel">
-
-        <div class="trend-header">
-
-            <h3>
-                Environmental Trend
-            </h3>
-
-            <select id="trendSelect">
-
-                <option value="temperature">
-                    Temperature
-                </option>
-
-                <option value="humidity">
-                    Humidity
-                </option>
-
-                <option value="pressure">
-                    Pressure
-                </option>
-
-                <option value="uv">
-                    UV Index
-                </option>
-
-                <option value="dust">
-                    Dust
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div
-            class="graph"
-            id="graph">
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:40%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:52%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:46%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:65%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:58%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:72%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:63%">
-                </div>
-            </div>
-
-            <div class="graph-column">
-                <div class="graph-bar"
-                    style="height:78%">
-                </div>
             </div>
 
         </div>
 
 
-        <div class="graph-labels">
+        <!-- ================= GRAPH ================= -->
 
-            <span>
-                -60 min
-            </span>
+        <div class="graph-card">
 
-            <span>
-                -45 min
-            </span>
+            <div class="graph-title">
 
-            <span>
-                -30 min
-            </span>
+                <h3>
+                    Environmental Trend
+                </h3>
 
-            <span>
-                -15 min
-            </span>
+                <p>
+                    Demonstration temperature trend
+                    for interface visualization.
+                </p>
 
-            <span>
-                NOW
-            </span>
+            </div>
+
+            <div class="graph">
+
+                <div class="line">
+
+                    <svg viewBox="0 0 1000 100">
+
+                        <polyline
+                            points="
+                            0,70
+                            100,62
+                            200,68
+                            300,50
+                            400,58
+                            500,42
+                            600,47
+                            700,30
+                            800,38
+                            900,25
+                            1000,32
+                            ">
+                        </polyline>
+
+                    </svg>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="notice">
 
+            <strong>DEMONSTRATION MODE:</strong>
 
-
-<!-- =====================================================
-     DEMO NOTICE
-===================================================== -->
-
-<section>
-
-    <div class="demo-notice">
-
-        <h3>
-            Demonstration Monitoring Interface
-        </h3>
-
-        <p>
-            The values displayed on this page are
+            The values shown on this page are
             demonstration values for the RAKSALA
-            website interface. They are not live
-            sensor measurements. The interface can
-            later be connected to the RAKSALA node
-            and authorized backend through Firebase
-            or another approved data service.
-        </p>
+            interface. They are not live sensor readings.
+            A future ESP32/Firebase backend can be
+            connected to these fields.
+
+        </div>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h3>
+                    Continuous Monitoring
+                </h3>
+
+                <p>
+                    The RAKSALA sensing layer is designed
+                    to observe environmental conditions
+                    affecting high-altitude equipment.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    Local Processing
+                </h3>
+
+                <p>
+                    Sensor information can be processed
+                    locally at the node before being
+                    transmitted through the communication
+                    architecture.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    Historical Analysis
+                </h3>
+
+                <p>
+                    Recorded measurements can later be
+                    used to identify environmental trends,
+                    threshold events and operating patterns.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- ================= FOOTER ================= -->
 
-<!-- =====================================================
-     INFORMATION
-===================================================== -->
+<footer>
 
-<section>
-
-    <div class="section-heading">
-
-        <div class="section-label">
-            MONITORING CAPABILITY
-        </div>
-
-        <h2>
-            Environmental Awareness
-        </h2>
-
-        <p>
-            RAKSALA uses environmental sensing to
-            maintain awareness of conditions that can
-            affect electronics and communication
-            equipment in high-altitude environments.
-        </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-
-        <div class="info-card">
-
-            <h3>
-                Temperature Monitoring
-            </h3>
-
-            <p>
-                Tracks ambient temperature to help
-                identify extreme cold and thermal
-                operating conditions.
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Atmospheric Monitoring
-            </h3>
-
-            <p>
-                Humidity and pressure measurements
-                provide environmental context for
-                high-altitude operation.
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Exposure Monitoring
-            </h3>
-
-            <p>
-                UV index and dust measurements help
-                identify environmental exposure
-                conditions around the system.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="monitor-footer">
-
-    <div class="footer-inner">
+    <div class="footer-content">
 
         <div>
 
-            <h3>
-                RAKSALA
-            </h3>
+            <h3>RAKSALA</h3>
 
             <p>
                 Protect • Power • Connect
             </p>
 
+            <p>
+                Adaptive technology for extreme
+                environments.
+            </p>
+
         </div>
 
 
-        <div>
+        <div class="footer-links">
 
-            <h3>
-                Monitoring
-            </h3>
+            <h4>Explore</h4>
 
-            <p>
-                Temperature • Humidity • Pressure
-                • UV Index • Dust
-            </p>
+            <a href="../index.html">Home</a>
+            <a href="system.html">System</a>
+            <a href="monitoring.html">Monitoring</a>
+            <a href="hub.html">Hub</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Resources</h4>
+
+            <a href="documents.html">Documents</a>
+            <a href="resources.html">Resources</a>
+            <a href="connect.html">Connect</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Connect</h4>
+
+            <a href="https://github.com/" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://youtube.com/" target="_blank">
+                YouTube
+            </a>
+
+            <a href="https://instagram.com/" target="_blank">
+                Instagram
+            </a>
 
         </div>
 
@@ -2069,292 +989,117 @@ body {
 
     <div class="footer-bottom">
 
-        © 2026 RAKSALA. All Rights Reserved.
+        <span>
+            © 2026 RAKSALA. All Rights Reserved.
+        </span>
+
+        <span>
+            Protect • Power • Connect
+        </span>
 
     </div>
 
 </footer>
 
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-/* =====================================================
-   DEMO DATA
-===================================================== */
+function toggleLanguage() {
 
-const values = {
+    const menu =
+        document.getElementById("languageMenu");
 
-    temperature: -32.0,
-
-    humidity: 41,
-
-    pressure: 58,
-
-    uv: 7.2,
-
-    dust: 34
-
-};
+    menu.style.display =
+        menu.style.display === "block"
+        ? "none"
+        : "block";
+}
 
 
-/* =====================================================
-   CLOCK
-===================================================== */
+function setLanguage(language) {
+
+    const button =
+        document.querySelector(".language button");
+
+    button.innerHTML =
+        "🌐 " + language + " ▾";
+
+    document.getElementById(
+        "languageMenu"
+    ).style.display = "none";
+}
+
+
+function searchPage() {
+
+    const value =
+        document.getElementById(
+            "searchInput"
+        ).value
+        .trim()
+        .toLowerCase();
+
+    if (!value) return;
+
+    const text =
+        document.body.innerText.toLowerCase();
+
+    if (text.includes(value)) {
+
+        alert(
+            "The term \"" +
+            value +
+            "\" is available on this page."
+        );
+
+    } else {
+
+        alert(
+            "No matching content found on this page."
+        );
+
+    }
+}
+
 
 function updateClock() {
 
     const now = new Date();
 
-    document.getElementById("clock")
-        .textContent =
+    document.getElementById(
+        "clock"
+    ).textContent =
         now.toLocaleTimeString();
 
 }
+
 
 updateClock();
 
 setInterval(updateClock, 1000);
 
 
-/* =====================================================
-   SENSOR STATUS
-===================================================== */
+document.addEventListener(
+    "click",
+    function(event) {
 
-function updateStatus() {
+        const language =
+            document.querySelector(".language");
 
-    const temperature =
-        values.temperature;
+        if (!language.contains(event.target)) {
 
-    const humidity =
-        values.humidity;
+            document.getElementById(
+                "languageMenu"
+            ).style.display = "none";
 
-    const pressure =
-        values.pressure;
-
-    const uv =
-        values.uv;
-
-    const dust =
-        values.dust;
-
-
-    /* TEMPERATURE */
-
-    let temperatureStatus =
-        "NORMAL";
-
-    if (temperature < -40) {
-
-        temperatureStatus =
-            "CRITICAL";
-
-    } else if (temperature < -30) {
-
-        temperatureStatus =
-            "COLD";
-
-    }
-
-    document.getElementById(
-        "temperatureStatus"
-    ).textContent =
-        temperatureStatus;
-
-
-    /* HUMIDITY */
-
-    let humidityStatus =
-        "NORMAL";
-
-    if (humidity > 80) {
-
-        humidityStatus =
-            "HIGH";
-
-    }
-
-    document.getElementById(
-        "humidityStatus"
-    ).textContent =
-        humidityStatus;
-
-
-    /* PRESSURE */
-
-    let pressureStatus =
-        "NORMAL";
-
-    if (pressure < 50) {
-
-        pressureStatus =
-            "LOW";
-
-    }
-
-    document.getElementById(
-        "pressureStatus"
-    ).textContent =
-        pressureStatus;
-
-
-    /* UV */
-
-    let uvStatus =
-        "NORMAL";
-
-    if (uv >= 8) {
-
-        uvStatus =
-            "VERY HIGH";
-
-    } else if (uv >= 6) {
-
-        uvStatus =
-            "HIGH";
-
-    }
-
-    document.getElementById(
-        "uvStatus"
-    ).textContent =
-        uvStatus;
-
-
-    /* DUST */
-
-    let dustStatus =
-        "NORMAL";
-
-    if (dust >= 100) {
-
-        dustStatus =
-            "HIGH";
-
-    }
-
-    document.getElementById(
-        "dustStatus"
-    ).textContent =
-        dustStatus;
-
-}
-
-updateStatus();
-
-
-/* =====================================================
-   GRAPH
-===================================================== */
-
-const trendData = {
-
-    temperature: [
-        40, 52, 46, 65,
-        58, 72, 63, 78
-    ],
-
-    humidity: [
-        30, 35, 42, 45,
-        41, 48, 43, 41
-    ],
-
-    pressure: [
-        60, 55, 58, 62,
-        57, 60, 59, 58
-    ],
-
-    uv: [
-        35, 48, 52, 63,
-        70, 76, 68, 72
-    ],
-
-    dust: [
-        25, 31, 28, 42,
-        35, 40, 32, 34
-    ]
-
-};
-
-
-const trendSelect =
-    document.getElementById(
-        "trendSelect"
-    );
-
-
-const graph =
-    document.getElementById(
-        "graph"
-    );
-
-
-function updateGraph(parameter) {
-
-    const data =
-        trendData[parameter];
-
-
-    graph.innerHTML = "";
-
-
-    data.forEach(value => {
-
-        const column =
-            document.createElement(
-                "div"
-            );
-
-        column.className =
-            "graph-column";
-
-
-        const bar =
-            document.createElement(
-                "div"
-            );
-
-        bar.className =
-            "graph-bar";
-
-
-        bar.style.height =
-            value + "%";
-
-
-        column.appendChild(bar);
-
-        graph.appendChild(column);
-
-    });
-
-}
-
-
-trendSelect.addEventListener(
-    "change",
-    function () {
-
-        updateGraph(
-            this.value
-        );
+        }
 
     }
 );
 
-
-/* INITIAL GRAPH */
-
-updateGraph("temperature");
-
-
 </script>
 
-
 </body>
-
 </html>
