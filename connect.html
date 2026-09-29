@@ -6,236 +6,868 @@
 
     <title>Contact | RAKSALA</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* ==============================
-           RAKSALA CONTACT PAGE
-        ============================== */
+        /* ================================
+           CONTACT PAGE
+        ================================= */
+
+        .contact-page {
+            background: #f5f0df;
+            min-height: 100vh;
+        }
 
         .contact-hero {
             min-height: 430px;
-            background:
-                linear-gradient(rgba(5, 18, 32, 0.65), rgba(5, 18, 32, 0.75)),
-                url("../assets/images/hero.jpg") center/cover no-repeat;
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
+            padding: 80px 8%;
+            color: white;
+            background:
+                linear-gradient(rgba(5, 43, 39, 0.65),
+                rgba(5, 43, 39, 0.65)),
+                url("images/contact.jpg") center/cover;
         }
 
         .contact-hero-content {
-            max-width: 900px;
-            padding: 40px 20px;
+            max-width: 600px;
         }
 
-        .contact-hero-content .small-title {
-            font-size: 15px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            opacity: 0.9;
+        .contact-hero h1 {
+            font-family: Georgia, serif;
+            font-size: 58px;
+            margin-bottom: 10px;
         }
 
-        .contact-hero-content h1 {
-            font-size: 52px;
-            margin: 0 0 18px;
-            font-weight: 700;
-        }
-
-        .contact-hero-content p {
+        .contact-hero p {
             font-size: 18px;
             line-height: 1.7;
-            max-width: 720px;
-            margin: auto;
+            max-width: 500px;
         }
 
-        /* Main Contact */
-
         .contact-section {
-            padding: 80px 7%;
-            background: #f5f7f9;
+            padding: 70px 8%;
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
-        }
-
-        .contact-heading {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .contact-heading span {
-            color: #1677a8;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .contact-heading h2 {
-            font-size: 36px;
-            margin: 12px 0;
-            color: #102a43;
-        }
-
-        .contact-heading p {
-            max-width: 700px;
-            margin: auto;
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        /* Grid */
-
-        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
             align-items: stretch;
         }
 
-        /* Information Cards */
+        /* LEFT */
 
         .contact-info {
-            display: grid;
-            gap: 18px;
+            background: #f8f4e7;
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid #d8d0b8;
         }
 
-        .contact-card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 25px;
+        .contact-info h2 {
+            color: #123f38;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info > p {
+            color: #59645e;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
             display: flex;
+            align-items: center;
             gap: 18px;
-            align-items: flex-start;
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
-            border: 1px solid #e6edf2;
-            transition: 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+            margin: 22px 0;
         }
 
         .contact-icon {
-            min-width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            background: #e9f5fa;
-            color: #1677a8;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #dfe9d7;
+            color: #176153;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 20px;
         }
 
-        .contact-card h3 {
-            margin: 0 0 7px;
-            color: #102a43;
-            font-size: 18px;
+        .contact-item strong {
+            display: block;
+            color: #143f37;
+            margin-bottom: 4px;
         }
 
-        .contact-card p {
-            margin: 0;
-            color: #64748b;
-            line-height: 1.6;
-            font-size: 14px;
+        .contact-item span {
+            color: #626b65;
         }
 
-        .contact-card a {
-            color: #1677a8;
+        .social-title {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #143f37;
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #123f38;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
+            transition: 0.3s;
         }
 
-        .contact-card a:hover {
-            text-decoration: underline;
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: #1d6a5b;
         }
 
-        /* Form */
+        /* RIGHT ORDER CARD */
 
-        .contact-form-box {
-            background: #fff;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
-            border: 1px solid #e6edf2;
+        .order-card {
+            background: #103f38;
+            border-radius: 25px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-form-box h3 {
-            margin-top: 0;
+        .order-card::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            right: -60px;
+            bottom: -60px;
+        }
+
+        .order-card h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .order-card p {
+            color: #d6e2d9;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .order-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .order-btn {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .call-btn {
+            background: #72b59a;
+            color: white;
+        }
+
+        .register-btn {
+            background: #f5f0df;
+            color: #174d42;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =================================
+           REGISTRATION MODAL
+        ================================= */
+
+        .order-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 25, 21, 0.70);
+            z-index: 9999;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .order-modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 650px;
+            background: #f8f4e7;
+            border-radius: 28px;
+            padding: 40px;
+            position: relative;
+
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+
+            animation: modalOpen 0.3s ease;
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+
+            border: none;
+            background: transparent;
+
+            font-size: 28px;
+            cursor: pointer;
+
+            color: #244d44;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            color: #123f38;
+            font-family: Georgia, serif;
+            font-size: 34px;
             margin-bottom: 8px;
-            color: #102a43;
+        }
+
+        .modal-header p {
+            color: #68716b;
+        }
+
+        .registration-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .registration-option {
+            background: #efebdc;
+            border: 1px solid #ddd6c0;
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .registration-icon {
+            width: 60px;
+            height: 60px;
+            margin: auto auto 15px;
+
+            border-radius: 50%;
+
+            background: #d9e7d9;
+            color: #176153;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             font-size: 25px;
         }
 
-        .contact-form-box > p {
-            color: #64748b;
-            margin-bottom: 25px;
-            line-height: 1.6;
+        .registration-option h3 {
+            color: #17483f;
+            margin-bottom: 8px;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
+        .registration-option p {
+            font-size: 13px;
+            color: #69726c;
+            min-height: 38px;
         }
 
-        .form-group {
-            margin-bottom: 18px;
+        .modal-btn {
+            display: inline-block;
+            margin-top: 15px;
+
+            padding: 12px 22px;
+
+            border-radius: 25px;
+            border: none;
+
+            cursor: pointer;
+            text-decoration: none;
+
+            font-size: 14px;
         }
 
-        .form-group label {
+        .modal-call {
+            background: #1c6959;
+            color: white;
+        }
+
+        .modal-register {
+            background: white;
+            color: #1c6959;
+            border: 1px solid #9eae9f;
+        }
+
+        .modal-footer {
+            text-align: center;
+            margin-top: 25px;
+
+            color: #6c746d;
+            font-size: 12px;
+        }
+
+
+        /* REGISTRATION FORM */
+
+        .registration-form {
+            display: none;
+        }
+
+        .registration-form.active {
             display: block;
-            margin-bottom: 7px;
-            color: #334e68;
-            font-size: 14px;
-            font-weight: 600;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .registration-form input,
+        .registration-form textarea {
             width: 100%;
-            box-sizing: border-box;
-            padding: 13px 14px;
-            border: 1px solid #d8e1e8;
-            border-radius: 8px;
+            padding: 14px;
+
+            margin-bottom: 14px;
+
+            border: 1px solid #d3ccb8;
+            border-radius: 12px;
+
+            background: white;
+
             font-family: inherit;
-            font-size: 14px;
-            outline: none;
-            background: #fff;
-            transition: 0.2s;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: #1677a8;
-            box-shadow: 0 0 0 3px rgba(22, 119, 168, 0.10);
-        }
-
-        .form-group textarea {
-            min-height: 125px;
+        .registration-form textarea {
+            min-height: 100px;
             resize: vertical;
         }
 
         .submit-btn {
             width: 100%;
+            padding: 14px;
+
             border: none;
-            border-radius: 8px;
-            padding: 14px 20px;
-            background: #1677a8;
-            color: #fff;
-            font-size: 15px;
-            font-weight: 600;
+            border-radius: 25px;
+
+            background: #176153;
+            color: white;
+
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .submit-btn:hover {
-            background: #0e5d87
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero h1 {
+                font-size: 42px;
+            }
+
+            .registration-options {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-box {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="contact-page">
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        RAKSALA
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="how-it-works.html">
+            Need & Impact
+        </a>
+
+        <a href="dashboard.html">
+            Monitoring
+        </a>
+
+        <a href="team.html">
+            Team & Achievements
+        </a>
+
+        <a href="contact.html" class="active">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="contact-hero">
+
+    <div class="contact-hero-content">
+
+        <h1>Get in Touch</h1>
+
+        <p>
+            Have questions? We'd love to hear from you.
+            Connect with the KALASARA team and learn more
+            about our smart water purification system.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>Get in Touch</h2>
+
+            <p>
+                Have questions? We'd love to hear from you.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <strong>Email</strong>
+
+                    <span>
+                        kalasara0704@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <strong>Phone</strong>
+
+                    <span>
+                        +91 8637466236
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <strong>Location</strong>
+
+                    <span>
+                        Ladakh, India
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="social-title">
+                Follow Us
+            </div>
+
+            <div class="social-links">
+
+                <a href="#">◎</a>
+                <a href="#">▶</a>
+                <a href="#">in</a>
+                <a href="#">𝕏</a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ORDER CARD -->
+
+        <div class="order-card">
+
+            <h2>
+                Order Your Kalasara
+            </h2>
+
+            <p>
+                Choose how you'd like to register
+                and get clean water for your community
+                or home.
+            </p>
+
+
+            <div class="order-buttons">
+
+                <a
+                    href="tel:+918637466236"
+                    class="order-btn call-btn"
+                >
+                    ☎ &nbsp; Call and Order
+                </a>
+
+
+                <button
+                    class="order-btn register-btn"
+                    onclick="openOrderModal()"
+                >
+                    ▣ &nbsp; Manual Registration
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     REGISTRATION MODAL
+================================================= -->
+
+<div
+    class="order-modal"
+    id="orderModal"
+    onclick="closeOutside(event)"
+>
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+    >
+
+
+        <!-- CLOSE -->
+
+        <button
+            class="modal-close"
+            onclick="closeOrderModal()"
+        >
+            ×
+        </button>
+
+
+        <!-- HEADER -->
+
+        <div class="modal-header">
+
+            <h2>
+                Order Your Kalasara
+            </h2>
+
+            <p>
+                Choose how you'd like to register
+            </p>
+
+        </div>
+
+
+        <!-- OPTIONS -->
+
+        <div
+            class="registration-options"
+            id="registrationOptions"
+        >
+
+
+            <!-- CALL -->
+
+            <div class="registration-option">
+
+                <div class="registration-icon">
+                    ☎
+                </div>
+
+                <h3>
+                    Call and Order
+                </h3>
+
+                <p>
+                    Speak to our team and place
+                    your order directly.
+                </p>
+
+                <a
+                    href="tel:+918637466236"
+                    class="modal-btn modal-call"
+                >
+                    Call Now
+                </a>
+
+            </div>
+
+
+            <!-- MANUAL -->
+
+            <div class="registration-option">
+
+                <div class="registration-icon">
+                    ▤
+                </div>
+
+                <h3>
+                    Manual Registration
+                </h3>
+
+                <p>
+                    Fill in your details and
+                    we'll get back to you.
+                </p>
+
+                <button
+                    class="modal-btn modal-register"
+                    onclick="showRegistrationForm()"
+                >
+                    Register Now →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <div
+            class="registration-form"
+            id="registrationForm"
+        >
+
+            <input
+                type="text"
+                id="userName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="userPhone"
+                placeholder="Phone Number"
+                required
+            >
+
+            <input
+                type="email"
+                id="userEmail"
+                placeholder="Email Address"
+            >
+
+            <input
+                type="text"
+                id="userLocation"
+                placeholder="Village / City / Location"
+            >
+
+            <textarea
+                id="userMessage"
+                placeholder="Tell us about your requirement..."
+            ></textarea>
+
+
+            <button
+                class="submit-btn"
+                onclick="submitRegistration()"
+            >
+                Submit Registration
+            </button>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            Clean Water • Healthier Communities •
+            Brighter Future
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function openOrderModal() {
+
+    document
+        .getElementById("orderModal")
+        .classList.add("active");
+
+}
+
+
+function closeOrderModal() {
+
+    document
+        .getElementById("orderModal")
+        .classList.remove("active");
+
+}
+
+
+function closeOutside(event) {
+
+    if (
+        event.target.id === "orderModal"
+    ) {
+
+        closeOrderModal();
+
+    }
+
+}
+
+
+function showRegistrationForm() {
+
+    document
+        .getElementById("registrationOptions")
+        .style.display = "none";
+
+    document
+        .getElementById("registrationForm")
+        .classList.add("active");
+
+}
+
+
+function submitRegistration() {
+
+    const name =
+        document.getElementById("userName").value;
+
+    const phone =
+        document.getElementById("userPhone").value;
+
+    if (!name || !phone) {
+
+        alert(
+            "Please enter your name and phone number."
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Thank you, " +
+        name +
+        "! Your Kalasara registration has been received."
+    );
+
+
+    closeOrderModal();
+
+}
+
+
+</script>
+
+
+</body>
+</html>
