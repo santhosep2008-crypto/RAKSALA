@@ -2543,3 +2543,830 @@ img {
 
         .submit-btn:hover {
             background: #0e5d87
+           /* =========================================================
+   RAKSALA CONNECT / CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+    background: #f4f7f9;
+    color: #102a43;
+}
+
+
+/* =========================================================
+   CONTACT HERO
+   ========================================================= */
+
+.contact-page .contact-hero {
+    min-height: 460px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 20, 35, 0.88),
+            rgba(5, 20, 35, 0.55),
+            rgba(5, 20, 35, 0.25)
+        ),
+        url("../assets/images/hero.jpg") center/cover no-repeat;
+}
+
+.contact-page .contact-hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-page .contact-hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.05;
+
+    margin: 0 0 20px;
+
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    color: #ffffff;
+}
+
+.contact-page .contact-hero h1::after {
+    content: "";
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    margin-top: 22px;
+
+    background: #5ca9c8;
+    border-radius: 10px;
+}
+
+.contact-page .contact-hero p {
+    max-width: 680px;
+
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.90);
+}
+
+
+/* =========================================================
+   MAIN CONTACT SECTION
+   ========================================================= */
+
+.contact-page .contact-section {
+    padding: 85px 7%;
+    background: #f4f7f9;
+}
+
+.contact-page .contact-container {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT INFORMATION PANEL
+   ========================================================= */
+
+.contact-page .contact-info {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 42px;
+
+    border-radius: 18px;
+
+    border: 1px solid #dce5eb;
+
+    box-shadow:
+        0 12px 35px rgba(16, 42, 67, 0.08);
+
+    overflow: hidden;
+}
+
+.contact-page .contact-info::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #123b52,
+        #3f88a8
+    );
+}
+
+.contact-page .contact-info h2 {
+    margin: 0 0 12px;
+
+    font-size: 32px;
+
+    color: #102a43;
+}
+
+.contact-page .contact-info > p {
+    margin: 0 0 32px;
+
+    color: #627d98;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT ITEMS
+   ========================================================= */
+
+.contact-page .contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #e8eef2;
+}
+
+.contact-page .contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-page .contact-icon {
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3f7;
+
+    color: #176383;
+
+    font-size: 21px;
+
+    border: 1px solid #d7e7ee;
+}
+
+.contact-page .contact-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    color: #102a43;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+.contact-page .contact-item span {
+    color: #627d98;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.contact-page .social-title {
+    margin-top: 32px;
+    margin-bottom: 14px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #102a43;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.contact-page .social-links {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.contact-page .social-links a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #123b52;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.contact-page .social-links a:hover {
+    background: #2e789b;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(18, 59, 82, 0.22);
+}
+
+
+/* =========================================================
+   RIGHT RAKSALA CONNECTION PANEL
+   ========================================================= */
+
+.contact-page .order-card {
+    position: relative;
+
+    min-height: 100%;
+
+    padding: 48px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d3044,
+            #123f56
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(9, 35, 50, 0.18);
+}
+
+.contact-page .order-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    right: -100px;
+    top: -90px;
+}
+
+.contact-page .order-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    right: 20px;
+    bottom: -100px;
+}
+
+.contact-page .order-card h2 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 0 15px;
+
+    font-size: 34px;
+
+    color: #ffffff;
+}
+
+.contact-page .order-card p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+
+    color: rgba(255,255,255,0.78);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   RAKSALA CONNECT BUTTONS
+   ========================================================= */
+
+.contact-page .order-buttons {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.contact-page .order-btn {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid transparent;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+.contact-page .call-btn {
+    background: #4c91ad;
+
+    color: #ffffff;
+}
+
+.contact-page .register-btn {
+    background: rgba(255,255,255,0.08);
+
+    color: #ffffff;
+
+    border-color: rgba(255,255,255,0.25);
+}
+
+.contact-page .order-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.contact-page .order-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    background: rgba(4, 18, 28, 0.78);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    backdrop-filter: blur(5px);
+}
+
+.contact-page .order-modal.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   MODAL BOX
+   ========================================================= */
+
+.contact-page .modal-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.35);
+
+    animation: raksalaModalOpen 0.25s ease;
+}
+
+@keyframes raksalaModalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+   ========================================================= */
+
+.contact-page .modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf3f6;
+
+    color: #183b4d;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.contact-page .modal-close:hover {
+    background: #dce9ef;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.contact-page .modal-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.contact-page .modal-header h2 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+
+    color: #102a43;
+}
+
+.contact-page .modal-header p {
+    margin: 0;
+
+    color: #627d98;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   REGISTRATION OPTIONS
+   ========================================================= */
+
+.contact-page .registration-options {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.contact-page .registration-option {
+    padding: 28px 20px;
+
+    text-align: center;
+
+    background: #f5f8fa;
+
+    border: 1px solid #dce6eb;
+
+    border-radius: 14px;
+
+    transition: 0.25s;
+}
+
+.contact-page .registration-option:hover {
+    border-color: #8db4c5;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(16,42,67,0.08);
+}
+
+.contact-page .registration-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 12px;
+
+    background: #e6f1f5;
+
+    color: #176383;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.contact-page .registration-option h3 {
+    margin: 0 0 8px;
+
+    color: #102a43;
+
+    font-size: 18px;
+}
+
+.contact-page .registration-option p {
+    min-height: 40px;
+
+    margin: 0;
+
+    color: #627d98;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+   ========================================================= */
+
+.contact-page .modal-btn {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    border: none;
+
+    transition: 0.2s;
+}
+
+.contact-page .modal-call {
+    background: #123f56;
+
+    color: #ffffff;
+}
+
+.contact-page .modal-register {
+    background: #ffffff;
+
+    color: #123f56;
+
+    border: 1px solid #9db4bf;
+}
+
+.contact-page .modal-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   REGISTRATION FORM
+   ========================================================= */
+
+.contact-page .registration-form {
+    display: none;
+}
+
+.contact-page .registration-form.active {
+    display: block;
+}
+
+.contact-page .registration-form input,
+.contact-page .registration-form textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    margin-bottom: 13px;
+
+    border: 1px solid #d5e0e6;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #102a43;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.contact-page .registration-form input:focus,
+.contact-page .registration-form textarea:focus {
+    border-color: #4c91ad;
+
+    box-shadow:
+        0 0 0 3px rgba(76,145,173,0.10);
+}
+
+.contact-page .registration-form textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.contact-page .submit-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #123f56;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.contact-page .submit-btn:hover {
+    background: #1d617f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.contact-page .modal-footer {
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e2e9ed;
+
+    text-align: center;
+
+    color: #7b8c98;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-page .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page .contact-hero {
+        min-height: 400px;
+
+        padding: 70px 6%;
+    }
+
+    .contact-page .contact-info,
+    .contact-page .order-card {
+        padding: 32px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-page .contact-section {
+        padding: 55px 5%;
+    }
+
+    .contact-page .contact-hero h1 {
+        font-size: 40px;
+    }
+
+    .contact-page .contact-hero p {
+        font-size: 15px;
+    }
+
+    .contact-page .contact-info h2,
+    .contact-page .order-card h2 {
+        font-size: 27px;
+    }
+
+    .contact-page .registration-options {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page .modal-box {
+        padding: 30px 20px;
+    }
+}
